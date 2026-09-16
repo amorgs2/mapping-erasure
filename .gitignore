@@ -1,0 +1,8 @@
+# macOS Finder metadata
+.DS_Store
+
+# Excel lock files (created while the workbook is open)
+~$*
+
+# Built website for hosting
+dist/

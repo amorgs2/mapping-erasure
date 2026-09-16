@@ -1,0 +1,515 @@
+[
+ {
+  "id": "S-001",
+  "title": "czbrats \"Villages Underwater\" pages",
+  "origin": "Mixed origins",
+  "date": "undated",
+  "medium": "Web compilation",
+  "reliability": "Low",
+  "archive": "ARC-06"
+ },
+ {
+  "id": "S-002",
+  "title": "Erased: The Untold Story of the Panama Canal",
+  "origin": "Later scholarship",
+  "date": "2019",
+  "medium": "Secondary",
+  "reliability": "High",
+  "archive": "ARC-20"
+ },
+ {
+  "id": "S-003",
+  "title": "The Canal Record (official weekly)",
+  "origin": "US official",
+  "date": "1907-1941",
+  "medium": "Report",
+  "reliability": "High",
+  "archive": "ARC-03"
+ },
+ {
+  "id": "S-004",
+  "title": "Records of the Panama Canal (Record Group 185)",
+  "origin": "US official",
+  "date": "1904-1979",
+  "medium": "Administrative",
+  "reliability": "High",
+  "archive": "ARC-01"
+ },
+ {
+  "id": "S-005",
+  "title": "Property Map of the Canal Zone",
+  "origin": "US official",
+  "date": "1911",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-02"
+ },
+ {
+  "id": "S-006",
+  "title": "Isthmian Canal Commission Map of the Canal Zone (Annual Report)",
+  "origin": "US official",
+  "date": "1910",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-02"
+ },
+ {
+  "id": "S-007",
+  "title": "Museo del Canal Interoce\u00e1nico de Panam\u00e1 \u2014 Centro de Documentaci\u00f3n y Archivo (including the Archivo de Historia Oral)",
+  "origin": "Panamanian",
+  "date": "circa 1850-present",
+  "medium": "Administrative",
+  "reliability": "High",
+  "archive": "ARC-04"
+ },
+ {
+  "id": "S-008",
+  "title": "Silver Men: West Indian Labourers archive",
+  "origin": "Caribbean community",
+  "date": "1880-1914",
+  "medium": "Administrative",
+  "reliability": "Medium",
+  "archive": "ARC-05"
+ },
+ {
+  "id": "S-009",
+  "title": "Chronicling America digitized newspapers (searched in full text)",
+  "origin": "US press",
+  "date": "1880-1920",
+  "medium": "Newspaper",
+  "reliability": "Medium",
+  "archive": "ARC-10"
+ },
+ {
+  "id": "S-010",
+  "title": "Post offices in the Canal Zone (list), Evening Star, 16 February 1906, page 2",
+  "origin": "US press",
+  "date": "1906-02-16",
+  "medium": "Newspaper",
+  "reliability": "High",
+  "archive": "ARC-10"
+ },
+ {
+  "id": "S-011",
+  "title": "Commissary-closure chronology, Der Sonntagsbote und der Seebote, 18 May 1913, page 1",
+  "origin": "US press",
+  "date": "1913-05-18",
+  "medium": "Newspaper",
+  "reliability": "Medium",
+  "archive": "ARC-10"
+ },
+ {
+  "id": "S-012",
+  "title": "Canal Record 'vanishing villages' syndication (December 1911 - April 1912)",
+  "origin": "US official",
+  "date": "1911-1912",
+  "medium": "Newspaper",
+  "reliability": "High",
+  "archive": "ARC-10"
+ },
+ {
+  "id": "S-013",
+  "title": "Saint Croix Avis French-era canal reports (1882-1887)",
+  "origin": "Caribbean community",
+  "date": "1882-1887",
+  "medium": "Newspaper",
+  "reliability": "Medium",
+  "archive": "ARC-10"
+ },
+ {
+  "id": "S-014",
+  "title": "Record Group 185 digitized photographs (United States National Archives catalog)",
+  "origin": "US official",
+  "date": "1887-1960",
+  "medium": "Photograph",
+  "reliability": "High",
+  "archive": "ARC-01"
+ },
+ {
+  "id": "S-015",
+  "title": "Preliminary Inventory of the Cartographic Records of The Panama Canal (Preliminary Inventory 91, 1956)",
+  "origin": "US official",
+  "date": "1956",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-01"
+ },
+ {
+  "id": "S-016",
+  "title": "Smithsonian Open Access collections",
+  "origin": "US official",
+  "date": "1850-1940s",
+  "medium": "Administrative",
+  "reliability": "High",
+  "archive": "ARC-08"
+ },
+ {
+  "id": "S-017",
+  "title": "W. A. Fishbaugh Panama Canal Photograph Album",
+  "origin": "US press",
+  "date": "1905-1908",
+  "medium": "Photograph",
+  "reliability": "High",
+  "archive": "ARC-08"
+ },
+ {
+  "id": "S-018",
+  "title": "The Panama Canal, plate from Shepherd's Historical Atlas (1911)",
+  "origin": "Later scholarship",
+  "date": "1911",
+  "medium": "Map",
+  "reliability": "Medium",
+  "archive": "ARC-13"
+ },
+ {
+  "id": "S-019",
+  "title": "Eastern Reflector (Greenville, North Carolina)",
+  "origin": "US press",
+  "date": "1879-1919",
+  "medium": "Newspaper",
+  "reliability": "Medium",
+  "archive": "ARC-12"
+ },
+ {
+  "id": "S-020",
+  "title": "East Carolina University Digital Collections: Canal Zone material (Daily Reflector, oral histories, yearbooks)",
+  "origin": "US press",
+  "date": "1920-1990",
+  "medium": "Web compilation",
+  "reliability": "Medium",
+  "archive": "ARC-12"
+ },
+ {
+  "id": "S-021",
+  "title": "Internet Archive canal-era texts (1,315 digitized volumes)",
+  "origin": "Mixed origins",
+  "date": "1880-1980",
+  "medium": "Web compilation",
+  "reliability": "Medium",
+  "archive": "ARC-11"
+ },
+ {
+  "id": "S-022",
+  "title": "General map of Empire (pcc00020)",
+  "origin": "US official",
+  "date": "circa 1907-08",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-02"
+ },
+ {
+  "id": "S-023",
+  "title": "Map of Culebra (pcc00016)",
+  "origin": "US official",
+  "date": "1910",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-02"
+ },
+ {
+  "id": "S-024",
+  "title": "Map of new town near Culebra, 1:1000 (pcc00015)",
+  "origin": "US official",
+  "date": "1905",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-02"
+ },
+ {
+  "id": "S-025",
+  "title": "Map of Gorgona saloon-licensing areas, 1:2000 (pcc00017)",
+  "origin": "US official",
+  "date": "1908",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-02"
+ },
+ {
+  "id": "S-026",
+  "title": "Plan du village de Guachapali, 1:500 (pcc00018)",
+  "origin": "French canal company",
+  "date": "1890",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-02"
+ },
+ {
+  "id": "S-027",
+  "title": "Surveys of the Panama Canal, Maps Numbers 1-2 (Isthmian Canal Commission 1905-06, published 1908)",
+  "origin": "US official",
+  "date": "1908",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-02"
+ },
+ {
+  "id": "S-028",
+  "title": "Plano de tierras del Rio Chagres (pcc00023, dated May 1862)",
+  "origin": "Panama Railroad Company (US-owned)",
+  "date": "1862",
+  "medium": "Map",
+  "reliability": "Medium",
+  "archive": "ARC-02"
+ },
+ {
+  "id": "S-029",
+  "title": "Maps of proposed canal, Gorgona to Panama, 1895 (3 sheets)",
+  "origin": "French canal company",
+  "date": "1895",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-02"
+ },
+ {
+  "id": "S-030",
+  "title": "Plans showing location of buildings in the encampments, Culebra Division (21 sheets, 1:1000)",
+  "origin": "US official",
+  "date": "1907-06-01 00:00:00",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-02"
+ },
+ {
+  "id": "S-031",
+  "title": "Canal Zone and Vicinity, 1:100,000 (pcc00002)",
+  "origin": "US official",
+  "date": "1947",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-02"
+ },
+ {
+  "id": "S-032",
+  "title": "Presencia china en las construcciones del ferrocarril y del Canal de Panam\u00e1 (1852-1914)",
+  "origin": "Panamanian",
+  "date": "2014",
+  "medium": "Secondary",
+  "reliability": "Medium",
+  "archive": "ARC-04"
+ },
+ {
+  "id": "S-033",
+  "title": "1940 Census Enumeration District Maps - Panama Canal Zone (A3378)",
+  "origin": "US official",
+  "date": "1940",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-14"
+ },
+ {
+  "id": "S-034",
+  "title": "1950 Census Enumeration District Maps - Panama Canal Zone",
+  "origin": "US official",
+  "date": "1950",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-14"
+ },
+ {
+  "id": "S-035",
+  "title": "Digital Library of the Caribbean, searched in full text (Caribbean Newspaper Digital Library and related collections)",
+  "origin": "Caribbean community",
+  "date": "1880-1950",
+  "medium": "Newspaper",
+  "reliability": "Medium",
+  "archive": "ARC-09"
+ },
+ {
+  "id": "S-036",
+  "title": "Isthmian Historical Society competition letters ('Silver People', 1963)",
+  "origin": "Caribbean community",
+  "date": "1963 (recalling 1904-14)",
+  "medium": "Web compilation",
+  "reliability": "High",
+  "archive": "ARC-09"
+ },
+ {
+  "id": "S-037",
+  "title": "Map of Pacific Terminal Cities (Engineer Base Reproduction Plant, Panama Canal Department)",
+  "origin": "US military",
+  "date": "1947-10 (printed 1952-53)",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-02"
+ },
+ {
+  "id": "S-038",
+  "title": "Plano de la Ciudad de Panama en 1904 (C. Bertoncini, 1:5000)",
+  "origin": "Panamanian",
+  "date": "1904",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-02"
+ },
+ {
+  "id": "S-039",
+  "title": "Note sur la constitution geologique de l'isthme de Panama, au point de vue de l'execution du canal interoceanique",
+  "origin": "French canal company",
+  "date": "1880",
+  "medium": "Report",
+  "reliability": "High",
+  "archive": "ARC-17"
+ },
+ {
+  "id": "S-040",
+  "title": "A travers l'isthme de Panama: Trace interoceanique de L. N. B. Wyse et A. Reclus",
+  "origin": "French canal company",
+  "date": "1879",
+  "medium": "Secondary",
+  "reliability": "Medium",
+  "archive": "ARC-17"
+ },
+ {
+  "id": "S-041",
+  "title": "Le Canal de Panama en 1886, rapport presente par M. Jules-Charles Roux",
+  "origin": "French canal company",
+  "date": "1886",
+  "medium": "Report",
+  "reliability": "High",
+  "archive": "ARC-17"
+ },
+ {
+  "id": "S-042",
+  "title": "Map of the Isthmus of Panama representing the line of the Panama Rail Road (G.M. Totten, Chief Engineer, 1857; 8000 feet per inch = 1:96,000)",
+  "origin": "Panama Railroad Company (US-owned)",
+  "date": "1857",
+  "medium": "Map",
+  "reliability": "Medium",
+  "archive": "ARC-02"
+ },
+ {
+  "id": "S-043",
+  "title": "Lands belonging to the Panama Rail Road Company, Panama City and environs (200 feet per inch = 1:2,400)",
+  "origin": "Panama Railroad Company (US-owned)",
+  "date": "1857 (circa)",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-02"
+ },
+ {
+  "id": "S-044",
+  "title": "La estrella de Panama (Library of Congress World Newspapers, full-text)",
+  "origin": "Panamanian",
+  "date": "1849-current (digitized run at Library of Congress)",
+  "medium": "Newspaper",
+  "reliability": "Medium",
+  "archive": "ARC-18"
+ },
+ {
+  "id": "S-045",
+  "title": "Cristobal-Colon-Mount Hope (Engineer Base Reproduction Plant, Panama Canal Department, June 1947, 1:8,000)",
+  "origin": "US military",
+  "date": "1947-06",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-19"
+ },
+ {
+  "id": "S-046",
+  "title": "Map of the United States Canal Zone showing the completed Panama Canal (C.S. Hammond & Company atlas page)",
+  "origin": "US commercial publisher",
+  "date": "1927 (base ~1912)",
+  "medium": "Map",
+  "reliability": "Low",
+  "archive": "ARC-19"
+ },
+ {
+  "id": "S-047",
+  "title": "Map of the Canal Zone and Vicinity 1:100,000, 1927 base revised 1973",
+  "origin": "US official",
+  "date": "1973 (revision of 1927 base)",
+  "medium": "Map",
+  "reliability": "Medium",
+  "archive": "ARC-12"
+ },
+ {
+  "id": "S-048",
+  "title": "Carte topographique de l'Isthme de Panama entre Panama et Chagres, avec le trace du canal maritime (Napoleon Garella, dressee 1844, published 1845, 1:200,000)",
+  "origin": "French government survey",
+  "date": "1844 (published 1845)",
+  "medium": "Map",
+  "reliability": "Medium",
+  "archive": "ARC-19"
+ },
+ {
+  "id": "S-049",
+  "title": "Chart of the Harbour of Chagres, surveyed 1829 (J.A. Lloyd; Philosophical Transactions 1829 Plate V)",
+  "origin": "British survey",
+  "date": "1829 (surveyed)",
+  "medium": "Map",
+  "reliability": "Medium",
+  "archive": "ARC-16"
+ },
+ {
+  "id": "S-050",
+  "title": "Plans des principaux chantiers au 1er juin 1883 (Compagnie Universelle du Canal Interoceanique de Panama)",
+  "origin": "French canal company",
+  "date": "1883",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-17"
+ },
+ {
+  "id": "S-051",
+  "title": "Plan general du Canal (juillet 1886) + Profil geologique suivant l'axe du canal (Compagnie Universelle)",
+  "origin": "French canal company",
+  "date": "1886",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-17"
+ },
+ {
+  "id": "S-052",
+  "title": "Map of the Canal Zone and Vicinity, January 1927, 1:100,000 (The Panama Canal; National Archives 185-G-2220 photo print)",
+  "origin": "US official",
+  "date": "1927-01",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-01"
+ },
+ {
+  "id": "S-053",
+  "title": "Map of the Canal route at the beginning of American occupation (manuscript topographic compilation, circa 1904; Library of Congress pcc00001)",
+  "origin": "US official",
+  "date": "circa 1904",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-02"
+ },
+ {
+  "id": "S-054",
+  "title": "The Panama Canal - Map of the Canal Zone, Aug. 1, 1920 (Governor; Raggi-file copy with manuscript route annotations)",
+  "origin": "US official",
+  "date": "1920-08-01",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-01"
+ },
+ {
+  "id": "S-055",
+  "title": "Planta y Perspectiva de la Ciudad de Panama y su Fortificacion, 1688 (1891 photographic copy)",
+  "origin": "Spanish colonial (via US archive)",
+  "date": "1688 (copy 1891)",
+  "medium": "Map",
+  "reliability": "Medium",
+  "archive": "ARC-01"
+ },
+ {
+  "id": "S-056",
+  "title": "Historical Map of Canal Zone and Vicinity: Routes, Settlements etc. between 1502 and 1855 (Section of Surveys, Feb 1 1934)",
+  "origin": "US official (memory cartography)",
+  "date": "1934-02-01",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-01"
+ },
+ {
+  "id": "S-057",
+  "title": "Planos de las tierras baldias cuya adjudicacion pide la Compania Universal del Canal Interoceanico (3 lots, 1888: Tucuti, Darien, 204,500 ha; Catabella y San Pedro, Bocas del Toro, 109,200 ha; Sigsola y Robalo, Bocas del Toro, 190,500 ha)",
+  "origin": "French canal company",
+  "date": "1888",
+  "medium": "Map",
+  "reliability": "High",
+  "archive": "ARC-17"
+ }
+]

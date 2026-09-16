@@ -1,0 +1,164 @@
+[
+ {
+  "id": "R-01",
+  "from": "CZ-101",
+  "type": "part_of",
+  "to": "CZ-011",
+  "start": 1906,
+  "end": 1916,
+  "note": "Hospital within Empire."
+ },
+ {
+  "id": "R-02",
+  "from": "CZ-102",
+  "type": "part_of",
+  "to": "CZ-011",
+  "start": 1906,
+  "end": 1916,
+  "note": "Commissary within Empire."
+ },
+ {
+  "id": "R-03",
+  "from": "CZ-125",
+  "type": "part_of",
+  "to": "CZ-011",
+  "start": 1907,
+  "end": 1916,
+  "note": "Clubhouse/YMCA within Empire."
+ },
+ {
+  "id": "R-04",
+  "from": "CZ-104",
+  "type": "part_of",
+  "to": "CZ-011",
+  "start": 1905,
+  "end": 1916,
+  "note": "Silver quarters within Empire."
+ },
+ {
+  "id": "R-05",
+  "from": "CZ-105",
+  "type": "part_of",
+  "to": "CZ-011",
+  "start": 1905,
+  "end": 1916,
+  "note": "Gold quarters within Empire."
+ },
+ {
+  "id": "R-06",
+  "from": "CZ-106",
+  "type": "part_of",
+  "to": "CZ-011",
+  "start": 1885,
+  "end": 1916,
+  "note": "Plaza within Empire."
+ },
+ {
+  "id": "R-10",
+  "from": "CZ-021",
+  "type": "replaced_by",
+  "to": "CZ-039",
+  "start": 1909,
+  "end": null,
+  "note": "La Boca renamed/absorbed into Balboa as Pacific terminal town."
+ },
+ {
+  "id": "R-11",
+  "from": "CZ-023",
+  "type": "replaced_by",
+  "to": "CZ-173",
+  "start": 1909,
+  "end": 1914,
+  "note": "Station relocated to the new Panama Railroad line above lake level; the old-line village drowned by Gatun Lake."
+ },
+ {
+  "id": "R-12",
+  "from": "CZ-174",
+  "type": "part_of",
+  "to": "CZ-012",
+  "start": 1908,
+  "end": 1913,
+  "note": "McDonald letter: colored section by the Gorgona Shops."
+ },
+ {
+  "id": "R-13",
+  "from": "CZ-175",
+  "type": "part_of",
+  "to": "CZ-011",
+  "start": 1907,
+  "end": 1913,
+  "note": "Commissary delivery district of Empire; Camacho kitchen 1907."
+ },
+ {
+  "id": "R-14",
+  "from": "CZ-176",
+  "type": "part_of",
+  "to": "CZ-018",
+  "start": 1906,
+  "end": 1913,
+  "note": "US citizens' quarter of early Ancon, toward Gorgas."
+ },
+ {
+  "id": "R-15",
+  "from": "CZ-177",
+  "type": "part_of",
+  "to": "CZ-001",
+  "start": 1911,
+  "end": 1913,
+  "note": "Lodging locality within Matachin (White, 1911)."
+ },
+ {
+  "id": "R-16",
+  "from": "CZ-178",
+  "type": "part_of",
+  "to": "CZ-013",
+  "start": 1906,
+  "end": 1913,
+  "note": "Culebra's Rio Grande camp and works."
+ },
+ {
+  "id": "R-17",
+  "from": "CZ-055",
+  "type": "replaced_by",
+  "to": "CZ-182",
+  "start": 1913,
+  "end": 1939,
+  "note": "Old Diablo village erased by canal works circa 1913; the US townsite Diablo Heights rises on the heights by 1939-40."
+ },
+ {
+  "id": "R-18",
+  "from": "CZ-183",
+  "type": "replaced_by",
+  "to": "CZ-073",
+  "start": 1911,
+  "end": 1914,
+  "note": "The village drowned under Gatun Lake; its hill persists as Barro Colorado Island (the island inherits the name)."
+ },
+ {
+  "id": "R-19",
+  "from": "CZ-163",
+  "type": "part_of",
+  "to": "CZ-198",
+  "start": 1904,
+  "end": null,
+  "note": "The Cementerio Chino is one enclosure in the Camino de La Boca cemetery row."
+ },
+ {
+  "id": "R-20",
+  "from": "CZ-208",
+  "type": "replaced_by",
+  "to": "CZ-039",
+  "start": 1912,
+  "end": null,
+  "note": "The Gerig shore camp is buried under the Balboa fill; the townsite that rises on the made ground takes the new name."
+ },
+ {
+  "id": "R-21",
+  "from": "CZ-215",
+  "type": "part_of",
+  "to": "CZ-010",
+  "start": 1906,
+  "end": 1913,
+  "note": "West Indian quarter of Gat\u00fan; submerged with the town under the lake."
+ }
+]
