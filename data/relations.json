@@ -45,15 +45,6 @@
   "note": "Gold quarters within Empire."
  },
  {
-  "id": "R-06",
-  "from": "CZ-106",
-  "type": "part_of",
-  "to": "CZ-011",
-  "start": 1885,
-  "end": 1916,
-  "note": "Plaza within Empire."
- },
- {
   "id": "R-10",
   "from": "CZ-021",
   "type": "replaced_by",
@@ -159,6 +150,6 @@
   "to": "CZ-010",
   "start": 1906,
   "end": 1913,
-  "note": "West Indian quarter of Gat\u00fan; submerged with the town under the lake."
+  "note": "West Indian quarter of Gatún; submerged with the town under the lake."
  }
 ]

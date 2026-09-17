@@ -6,7 +6,10 @@
   "date": "undated",
   "medium": "Web compilation",
   "reliability": "Low",
-  "archive": "ARC-06"
+  "archive": "ARC-06",
+  "url": "https://www.czbrats.com/Builders/earlytowns.htm",
+  "reference": "-",
+  "notes": "Lead-generator; verify every name."
  },
  {
   "id": "S-002",
@@ -15,7 +18,10 @@
   "date": "2019",
   "medium": "Secondary",
   "reliability": "High",
-  "archive": "ARC-20"
+  "archive": "ARC-20",
+  "url": "-",
+  "reference": "ISBN 9780674984448",
+  "notes": "Depopulation as policy. Maps by T. Stallman."
  },
  {
   "id": "S-003",
@@ -24,7 +30,10 @@
   "date": "1907-1941",
   "medium": "Report",
   "reliability": "High",
-  "archive": "ARC-03"
+  "archive": "ARC-03",
+  "url": "https://ufdc.ufl.edu/UF00097368",
+  "reference": "-",
+  "notes": "Week-by-week relocations. Full-text searchable at UFDC (bibid UF00097368, 28 digitized volumes 1907-1941); also on Internet Archive. Page-level harvest 2026-09: data/ufdc/."
  },
  {
   "id": "S-004",
@@ -33,7 +42,10 @@
   "date": "1904-1979",
   "medium": "Administrative",
   "reliability": "High",
-  "archive": "ARC-01"
+  "archive": "ARC-01",
+  "url": "https://www.archives.gov",
+  "reference": "RG 185",
+  "notes": "Maps, ICC records, labor series."
  },
  {
   "id": "S-005",
@@ -42,7 +54,10 @@
   "date": "1911",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-02"
+  "archive": "ARC-02",
+  "url": "https://www.loc.gov/item/2...",
+  "reference": "g4872c.pcc00006",
+  "notes": "Who was dispossessed."
  },
  {
   "id": "S-006",
@@ -51,16 +66,22 @@
   "date": "1910",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-02"
+  "archive": "ARC-02",
+  "url": "-",
+  "reference": "-",
+  "notes": "Towns + topography; georeference."
  },
  {
   "id": "S-007",
-  "title": "Museo del Canal Interoce\u00e1nico de Panam\u00e1 \u2014 Centro de Documentaci\u00f3n y Archivo (including the Archivo de Historia Oral)",
+  "title": "Museo del Canal Interoceánico de Panamá — Centro de Documentación y Archivo (including the Archivo de Historia Oral)",
   "origin": "Panamanian",
   "date": "circa 1850-present",
   "medium": "Administrative",
   "reliability": "High",
-  "archive": "ARC-04"
+  "archive": "ARC-04",
+  "url": "typismuci.museodelcanal.com",
+  "reference": "Koha OPAC (biblio); reserve + oral archive onsite",
+  "notes": "Panamanian-side counter-archive. Documentary Center holds >150 linear m of books, >32,000 archival folios, and an Archivo de Historia Oral (interviews with protagonistas de la historia de Panamá; UNESCO Memory of the World for the postal collection). Swept 2026-09-13 via the Koha OPAC (Spanish: Emperador, Gorgona, poblados, Chagres, + town names). CRITICAL ACCESS NOTE: catalog is metadata-only; ZERO digital objects served (cover images come from Amazon). Reserve cartography/photos/postcards and oral-history transcripts are ONSITE ONLY. Remote use beyond catalog metadata would require an email scan request to the Centro de Documentación or an on-site visit — not yet made. See data/museo/."
  },
  {
   "id": "S-008",
@@ -69,7 +90,10 @@
   "date": "1880-1914",
   "medium": "Administrative",
   "reliability": "Medium",
-  "archive": "ARC-05"
+  "archive": "ARC-05",
+  "url": "https://www.unesco.org/en/memory-world",
+  "reference": "-",
+  "notes": "Silver Roll labor geography."
  },
  {
   "id": "S-009",
@@ -78,7 +102,10 @@
   "date": "1880-1920",
   "medium": "Newspaper",
   "reliability": "Medium",
-  "archive": "ARC-10"
+  "archive": "ARC-10",
+  "url": "https://www.loc.gov/collections/chronicling-america/",
+  "reference": "-",
+  "notes": "Umbrella source for harvested newspaper mentions (2026-09); per-issue LOC URL in each attestation note. Harvest files: data/chronicling-america/."
  },
  {
   "id": "S-010",
@@ -87,7 +114,10 @@
   "date": "1906-02-16",
   "medium": "Newspaper",
   "reliability": "High",
-  "archive": "ARC-10"
+  "archive": "ARC-10",
+  "url": "https://www.loc.gov/resource/sn83045462/1906-02-16/ed-1/?sp=2",
+  "reference": "sn83045462",
+  "notes": "Official list of CZ post offices in operation 5 Feb 1906."
  },
  {
   "id": "S-011",
@@ -96,7 +126,10 @@
   "date": "1913-05-18",
   "medium": "Newspaper",
   "reliability": "Medium",
-  "archive": "ARC-10"
+  "archive": "ARC-10",
+  "url": "https://www.loc.gov/resource/sn87082456/1913-05-18/ed-1/?sp=1",
+  "reference": "sn87082456",
+  "notes": "German-language. Dates the closure of ten commissary settlements 1911-1913."
  },
  {
   "id": "S-012",
@@ -105,7 +138,10 @@
   "date": "1911-1912",
   "medium": "Newspaper",
   "reliability": "High",
-  "archive": "ARC-10"
+  "archive": "ARC-10",
+  "url": "https://www.loc.gov/resource/sn92070417/1912-01-10/ed-1/?sp=2",
+  "reference": "sn92070417 et al.",
+  "notes": "Names all Gatun Lake drowned villages; >=10 printings found. Richest: Las Vegas Optic 1912-01-10 p.2 (includes etymologies)."
  },
  {
   "id": "S-013",
@@ -114,7 +150,10 @@
   "date": "1882-1887",
   "medium": "Newspaper",
   "reliability": "Medium",
-  "archive": "ARC-10"
+  "archive": "ARC-10",
+  "url": "https://www.loc.gov/resource/sn84037526/1887-06-18/ed-1/?sp=4",
+  "reference": "sn84037526",
+  "notes": "Brigade list 1882-06-10 p.2; per-site excavation table 1887-06-18 p.4."
  },
  {
   "id": "S-014",
@@ -123,7 +162,10 @@
   "date": "1887-1960",
   "medium": "Photograph",
   "reliability": "High",
-  "archive": "ARC-01"
+  "archive": "ARC-01",
+  "url": "https://catalog.archives.gov/search?q=panama%20canal&recordGroupNumber=185",
+  "reference": "RG 185 (185-G, 185-CZ et al.)",
+  "notes": "Digitized items in catalog.archives.gov; series 185-G 'Photographs of the Construction of the Panama Canal 1887-1940' partially digitized. Harvest 2026-09: data/nara/."
  },
  {
   "id": "S-015",
@@ -132,7 +174,10 @@
   "date": "1956",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-01"
+  "archive": "ARC-01",
+  "url": "https://www.archives.gov/files/research/cartographic/pi-91-panama-canal.pdf",
+  "reference": "RG 185, ~9,240 items / 125 cu. ft.",
+  "notes": "Finding aid, read cover-to-cover 2026-09. Appendix II is a place-name index; attestations cite its file designations. The maps themselves are PAPER, onsite-only - not full-text searchable."
  },
  {
   "id": "S-016",
@@ -141,7 +186,10 @@
   "date": "1850-1940s",
   "medium": "Administrative",
   "reliability": "High",
-  "archive": "ARC-08"
+  "archive": "ARC-08",
+  "url": "https://collections.si.edu/search/",
+  "reference": "EDAN edanmdm records",
+  "notes": "20,798 town-name matches in 45,040 records (2026-09 harvest, data/smithsonian/). Mostly NMNH specimens whose collecting locality is a Zone town - type-locality attestations. Dates in notes are year_guess only (may be taxon-description year); verify per record before citing as attested time."
  },
  {
   "id": "S-017",
@@ -150,7 +198,10 @@
   "date": "1905-1908",
   "medium": "Photograph",
   "reliability": "High",
-  "archive": "ARC-08"
+  "archive": "ARC-08",
+  "url": "https://sova.si.edu/record/nmah.ac.1021",
+  "reference": "27 of 100 views digitized",
+  "notes": "Commercial construction-era views, captions printed in the negative; all 27 digitized views read 2026-09. Fishbaugh's studio imprint 'Empire C.Z.' on every print."
  },
  {
   "id": "S-018",
@@ -159,7 +210,10 @@
   "date": "1911",
   "medium": "Map",
   "reliability": "Medium",
-  "archive": "ARC-13"
+  "archive": "ARC-13",
+  "url": "https://maps.lib.utexas.edu/maps/historical/shepherd/panama_canal_shepherd.jpg",
+  "reference": "shepherd-c-216 / panama_canal_shepherd.jpg",
+  "notes": "1:400,000 map + canal profile placing each line settlement at its statute mile. Tertiary source but the full village sequence on one sheet; read 2026-09, saved to ~/Desktop/PCL Canal Zone Maps."
  },
  {
   "id": "S-019",
@@ -168,7 +222,10 @@
   "date": "1879-1919",
   "medium": "Newspaper",
   "reliability": "Medium",
-  "archive": "ARC-12"
+  "archive": "ARC-12",
+  "url": "https://digital.lib.ecu.edu/",
+  "reference": "digital.lib.ecu.edu",
+  "notes": "Greenville NC weekly; full-text OCR embedded in ECU item pages. Carries window-era canal coverage incl. Old Gatun removal (1 May 1908). Harvest: data/ecu/ (2026-09-07)."
  },
  {
   "id": "S-020",
@@ -177,7 +234,10 @@
   "date": "1920-1990",
   "medium": "Web compilation",
   "reliability": "Medium",
-  "archive": "ARC-12"
+  "archive": "ARC-12",
+  "url": "https://digital.lib.ecu.edu/",
+  "reference": "digital.lib.ecu.edu",
+  "notes": "Umbrella source for post-window ECU material: Daily Reflector, Navy/veteran oral histories, university records. 1,026 items scanned; 196 canal-context mentions. Harvest: data/ecu/."
  },
  {
   "id": "S-021",
@@ -186,7 +246,10 @@
   "date": "1880-1980",
   "medium": "Web compilation",
   "reliability": "Medium",
-  "archive": "ARC-11"
+  "archive": "ARC-11",
+  "url": "https://archive.org/",
+  "reference": "archive.org",
+  "notes": "Umbrella source for IA full-text harvest (data/internet-archive/): ICC hearings, Governor annual reports, Canal Zone pilot 1908, memoirs, natural-history surveys. Each attestation names its text in page/plate. Overlaps Canal Record (S-003) for official serials; picks prefer non-duplicate texts."
  },
  {
   "id": "S-022",
@@ -195,7 +258,10 @@
   "date": "circa 1907-08",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-02"
+  "archive": "ARC-02",
+  "url": "https://www.loc.gov/item/2007627522/",
+  "reference": "g4872e.pcc00020",
+  "notes": ""
  },
  {
   "id": "S-023",
@@ -204,7 +270,10 @@
   "date": "1910",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-02"
+  "archive": "ARC-02",
+  "url": "https://www.loc.gov/item/2007627520/",
+  "reference": "g4874c.pcc00016",
+  "notes": ""
  },
  {
   "id": "S-024",
@@ -213,7 +282,10 @@
   "date": "1905",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-02"
+  "archive": "ARC-02",
+  "url": "https://www.loc.gov/item/2007627519/",
+  "reference": "g4874c.pcc00015",
+  "notes": ""
  },
  {
   "id": "S-025",
@@ -222,7 +294,10 @@
   "date": "1908",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-02"
+  "archive": "ARC-02",
+  "url": "https://www.loc.gov/item/2007627521/",
+  "reference": "g4874g.pcc00017",
+  "notes": ""
  },
  {
   "id": "S-026",
@@ -231,7 +306,10 @@
   "date": "1890",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-02"
+  "archive": "ARC-02",
+  "url": "https://www.loc.gov/item/2007627523/",
+  "reference": "g4874g.pcc00018",
+  "notes": ""
  },
  {
   "id": "S-027",
@@ -240,7 +318,10 @@
   "date": "1908",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-02"
+  "archive": "ARC-02",
+  "url": "https://www.loc.gov/",
+  "reference": "(2 sheets, 1:12,000)",
+  "notes": ""
  },
  {
   "id": "S-028",
@@ -249,7 +330,10 @@
   "date": "1862",
   "medium": "Map",
   "reliability": "Medium",
-  "archive": "ARC-02"
+  "archive": "ARC-02",
+  "url": "https://www.loc.gov/item/2007627526/",
+  "reference": "g4872c.pcc00023",
+  "notes": ""
  },
  {
   "id": "S-029",
@@ -258,16 +342,22 @@
   "date": "1895",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-02"
+  "archive": "ARC-02",
+  "url": "https://www.loc.gov/item/93680805/",
+  "reference": "93680805",
+  "notes": ""
  },
  {
   "id": "S-030",
   "title": "Plans showing location of buildings in the encampments, Culebra Division (21 sheets, 1:1000)",
   "origin": "US official",
-  "date": "1907-06-01 00:00:00",
+  "date": "1907-06-01",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-02"
+  "archive": "ARC-02",
+  "url": "https://www.loc.gov/item/83694727/",
+  "reference": "83694727",
+  "notes": ""
  },
  {
   "id": "S-031",
@@ -276,16 +366,22 @@
   "date": "1947",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-02"
+  "archive": "ARC-02",
+  "url": "https://www.loc.gov/item/2007626685/",
+  "reference": "g4872c.pcc00002",
+  "notes": ""
  },
  {
   "id": "S-032",
-  "title": "Presencia china en las construcciones del ferrocarril y del Canal de Panam\u00e1 (1852-1914)",
+  "title": "Presencia china en las construcciones del ferrocarril y del Canal de Panamá (1852-1914)",
   "origin": "Panamanian",
   "date": "2014",
   "medium": "Secondary",
   "reliability": "Medium",
-  "archive": "ARC-04"
+  "archive": "ARC-04",
+  "url": "http://typismuci.museodelcanal.com/cgi-bin/koha/opac-detail.pl?biblionumber=6326",
+  "reference": "L 972.875 / ISBN 978-9962-633-39-6",
+  "notes": "Panamanian scholarship (MDC, 2014) documenting the Chinese community in the railroad and canal construction zones. Cited via its catalogued contents/figure list at Museo del Canal (physical book, no digital copy). Includes Cuadro 2: 'Censo de la población china en la Zona del Canal por pueblo (1908)' and captioned images of Chinese commerce in Emperador, Gorgona, Matachín, Cerro Paraíso. Counter-archive to the US official record's silence on the Asian population of these towns."
  },
  {
   "id": "S-033",
@@ -294,7 +390,10 @@
   "date": "1940",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-14"
+  "archive": "ARC-14",
+  "url": "https://catalog.archives.gov/id/5838606",
+  "reference": "A3378/PC; naIds 5838606-5838626",
+  "notes": "Building-level photostat town plans, hand-stamped 1940, one item per town/ED (Balboa + Cristobal counties). Downloaded 2026-09-05 into the NARA Desktop folder; recognised and mined 2026-09-13 (data/census/). Georeferencing candidates."
  },
  {
   "id": "S-034",
@@ -303,7 +402,10 @@
   "date": "1950",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-14"
+  "archive": "ARC-14",
+  "url": "https://catalog.archives.gov/id/75639631",
+  "reference": "naId 75639631",
+  "notes": "Zone-wide ED map set (ED 1-1..1-55, 2-1..2-52); no single-place items - registered for era context, attests no individual place yet."
  },
  {
   "id": "S-035",
@@ -312,7 +414,10 @@
   "date": "1880-1950",
   "medium": "Newspaper",
   "reliability": "Medium",
-  "archive": "ARC-09"
+  "archive": "ARC-09",
+  "url": "https://dloc.com",
+  "reference": "aggregation dloc1",
+  "notes": "Bridgetown/Nassau/Hamilton/Kingston press + Caribbean serials, full-text. Swept 2026-09-13 (data/silvermen/): item-level probe, name + panama co-occurrence; KWIC verification pending per name. The Silver Men consortium's registers themselves are NOT online - see ARC-05."
  },
  {
   "id": "S-036",
@@ -321,7 +426,10 @@
   "date": "1963 (recalling 1904-14)",
   "medium": "Web compilation",
   "reliability": "High",
-  "archive": "ARC-09"
+  "archive": "ARC-09",
+  "url": "https://dloc.com/AA00016037",
+  "reference": "bibid AA00016037",
+  "notes": "THE first-person counter-archive: competition for 'best true stories of life and work' by surviving West Indian canal workers, full-text searchable on dLOC. Found 2026-09-13 during the Silver Men KWIC pass. Follow-up queued: probe all 157 place names against this bibid's page text. | Full-roster probe run 2026-09-13 (data/silvermen/silverpeople_probe.csv): 122 names, 62 present / 60 absent; positives + town-scale expected-absences imported as attestations. Building-scale absences NOT claimed (phrase-brittle: letters say 'comsy of Empire'); 'Cerro' excluded as generic Spanish. | Scope 2026-09-14: Colon-fringe places the letters name (Coolie Town, Pueblo Nuevo) DECLINED as outside the Zone model - documented in LETTER_GEOMETRY_NOTES.md; testimony preserved in town notes."
  },
  {
   "id": "S-037",
@@ -330,7 +438,10 @@
   "date": "1947-10 (printed 1952-53)",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-02"
+  "archive": "ARC-02",
+  "url": "",
+  "reference": "pcc00008",
+  "notes": ""
  },
  {
   "id": "S-038",
@@ -339,7 +450,10 @@
   "date": "1904",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-02"
+  "archive": "ARC-02",
+  "url": "",
+  "reference": "pcc00019",
+  "notes": ""
  },
  {
   "id": "S-039",
@@ -348,7 +462,10 @@
   "date": "1880",
   "medium": "Report",
   "reliability": "High",
-  "archive": "ARC-17"
+  "archive": "ARC-17",
+  "url": "https://gallica.bnf.fr/ark:/12148/bd6t5777148r",
+  "reference": "ark:/12148/bd6t5777148r",
+  "notes": "Harvested 2026-09-14 via Gallica open APIs (SRU + ContentSearch); French canal-era (pre-US) attestation. See data/gallica/."
  },
  {
   "id": "S-040",
@@ -357,7 +474,10 @@
   "date": "1879",
   "medium": "Secondary",
   "reliability": "Medium",
-  "archive": "ARC-17"
+  "archive": "ARC-17",
+  "url": "https://gallica.bnf.fr/ark:/12148/bpt6k5400855p",
+  "reference": "ark:/12148/bpt6k5400855p",
+  "notes": "Harvested 2026-09-14 via Gallica open APIs (SRU + ContentSearch); French canal-era (pre-US) attestation. See data/gallica/."
  },
  {
   "id": "S-041",
@@ -366,7 +486,10 @@
   "date": "1886",
   "medium": "Report",
   "reliability": "High",
-  "archive": "ARC-17"
+  "archive": "ARC-17",
+  "url": "https://gallica.bnf.fr/ark:/12148/bpt6k1092498c",
+  "reference": "ark:/12148/bpt6k1092498c",
+  "notes": "Harvested 2026-09-14 via Gallica open APIs (SRU + ContentSearch); French canal-era (pre-US) attestation. See data/gallica/."
  },
  {
   "id": "S-042",
@@ -375,7 +498,10 @@
   "date": "1857",
   "medium": "Map",
   "reliability": "Medium",
-  "archive": "ARC-02"
+  "archive": "ARC-02",
+  "url": "",
+  "reference": "pcc00004",
+  "notes": ""
  },
  {
   "id": "S-043",
@@ -384,7 +510,10 @@
   "date": "1857 (circa)",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-02"
+  "archive": "ARC-02",
+  "url": "",
+  "reference": "pcc00013",
+  "notes": ""
  },
  {
   "id": "S-044",
@@ -393,7 +522,10 @@
   "date": "1849-current (digitized run at Library of Congress)",
   "medium": "Newspaper",
   "reliability": "Medium",
-  "archive": "ARC-18"
+  "archive": "ARC-18",
+  "url": "https://www.loc.gov/item/2010225009/",
+  "reference": "lccn 2010225009",
+  "notes": "THE Panamanian newspaper of record, full-text searchable at LOC - found 2026-09-14 during the Matachin hunt; the first Panamanian full-text corpus in the model. Roster probe 2026-09-14 in data/estrella/ (163 names, page-context queries per the Cloudflare recipe). KWIC/page-level verification pending per name; Spanish OCR quality varies."
  },
  {
   "id": "S-045",
@@ -402,7 +534,10 @@
   "date": "1947-06",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-19"
+  "archive": "ARC-19",
+  "url": "",
+  "reference": "AA00038126",
+  "notes": ""
  },
  {
   "id": "S-046",
@@ -411,7 +546,10 @@
   "date": "1927 (base ~1912)",
   "medium": "Map",
   "reliability": "Low",
-  "archive": "ARC-19"
+  "archive": "ARC-19",
+  "url": "",
+  "reference": "AA00038443",
+  "notes": ""
  },
  {
   "id": "S-047",
@@ -420,7 +558,10 @@
   "date": "1973 (revision of 1927 base)",
   "medium": "Map",
   "reliability": "Medium",
-  "archive": "ARC-12"
+  "archive": "ARC-12",
+  "url": "",
+  "reference": "56832",
+  "notes": ""
  },
  {
   "id": "S-048",
@@ -429,7 +570,10 @@
   "date": "1844 (published 1845)",
   "medium": "Map",
   "reliability": "Medium",
-  "archive": "ARC-19"
+  "archive": "ARC-19",
+  "url": "",
+  "reference": "UF00100942",
+  "notes": ""
  },
  {
   "id": "S-049",
@@ -438,7 +582,10 @@
   "date": "1829 (surveyed)",
   "medium": "Map",
   "reliability": "Medium",
-  "archive": "ARC-16"
+  "archive": "ARC-16",
+  "url": "",
+  "reference": "107889_0028 (+0027 Limon Bay, 0011/0017 isthmus)",
+  "notes": ""
  },
  {
   "id": "S-050",
@@ -447,7 +594,10 @@
   "date": "1883",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-17"
+  "archive": "ARC-17",
+  "url": "https://gallica.bnf.fr/ark:/12148/btv1b8439064m",
+  "reference": "ark:/12148/btv1b8439064m; BnF Ge D 152/153",
+  "notes": "Compagnie worksite plan, 1:20,000, 7 insets (Colon, Buhio-Soldado, San-Pablo, Gorgona, Matachin, Bas-Obispo, Emperador-Culebra). Canal/tracks/installations in RED; labor camps (campements) drawn as building clusters. Read 2026-09-14; towns recorded as Existence/mention with descriptive positions - NOT georeferenced to lat/lng (no unified graticule; GCP extraction is a follow-up). Full-res at data/georef/gallica_maps/."
  },
  {
   "id": "S-051",
@@ -456,7 +606,10 @@
   "date": "1886",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-17"
+  "archive": "ARC-17",
+  "url": "https://gallica.bnf.fr/ark:/12148/btv1b53060301n",
+  "reference": "ark:/12148/btv1b53060301n; BnF Ge C 3134",
+  "notes": "1:50,000 map of the whole canal line + a geological profile along the axis giving each town's kilometer position (PK) from Colon (PK 0) to Panama (PK 74.5). Read 2026-09-14; town PKs recorded as the French survey-grid positions (lat/long conversion via the canal alignment is a follow-up). Full-res at data/georef/gallica_maps/ (20045x7767)."
  },
  {
   "id": "S-052",
@@ -465,7 +618,10 @@
   "date": "1927-01",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-01"
+  "archive": "ARC-01",
+  "url": "https://catalog.archives.gov/id/100999006",
+  "reference": "185-G-2220",
+  "notes": ""
  },
  {
   "id": "S-053",
@@ -474,7 +630,10 @@
   "date": "circa 1904",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-02"
+  "archive": "ARC-02",
+  "url": "https://www.loc.gov/item/82690134/",
+  "reference": "pcc00001 (82690134); local file 4.tif",
+  "notes": ""
  },
  {
   "id": "S-054",
@@ -483,7 +642,10 @@
   "date": "1920-08-01",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-01"
+  "archive": "ARC-01",
+  "url": "https://catalog.archives.gov/id/6861830",
+  "reference": "RG185RaggiFilesFolder1-CanalZone",
+  "notes": ""
  },
  {
   "id": "S-055",
@@ -492,7 +654,10 @@
   "date": "1688 (copy 1891)",
   "medium": "Map",
   "reliability": "Medium",
-  "archive": "ARC-01"
+  "archive": "ARC-01",
+  "url": "https://catalog.archives.gov/id/100998878",
+  "reference": "185-G-2156",
+  "notes": ""
  },
  {
   "id": "S-056",
@@ -501,7 +666,10 @@
   "date": "1934-02-01",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-01"
+  "archive": "ARC-01",
+  "url": "https://catalog.archives.gov/id/100995004",
+  "reference": "185-G-211 / 26-A-1-(11)",
+  "notes": ""
  },
  {
   "id": "S-057",
@@ -510,6 +678,9 @@
   "date": "1888",
   "medium": "Map",
   "reliability": "High",
-  "archive": "ARC-17"
+  "archive": "ARC-17",
+  "url": "https://gallica.bnf.fr/ark:/12148/btv1b52525881g",
+  "reference": "ark:/12148/btv1b52525881g, btv1b52525883c, btv1b525258801",
+  "notes": "The company's petitions to Colombia for 504,200 hectares of 'tierras baldias' (vacant lands) - NONE on the canal line (the sweep registry's 'French line towns' expectation was wrong). The maps refute their own legal category: villages, named smallholder ranchos (M. Gonzales, Florencio Leon, J.B. Torres), an explicit CASERIO INDIO on Punta Bluefield, plantations and the Camino Real are all drawn INSIDE the lots, under 'FORETS VIERGES' lettering. Vacancy-declaration as erasure, 1888 - the mechanism the dissertation tracks in the Zone, a generation early and at territorial scale. Longitudes on the Bogota meridian; stated Escala 1/20.000 on the Bocas sheets (Tucuti scale digit uncertain, ~1/50.000 by graticule span). Out of the study frame: no attestations (PRRLANDS1857 precedent); inventory in TIERRAS1888_features.csv."
  }
 ]

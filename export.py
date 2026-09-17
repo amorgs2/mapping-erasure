@@ -19,14 +19,20 @@ than quietly on the map.
 """
 import json
 import re
-import sys
 import os
 import math
-from datetime import date
+import argparse
+from datetime import date, datetime
+from pathlib import Path
 
 import pandas as pd
 
-XLSX = sys.argv[1] if len(sys.argv) > 1 else "canal-zone-relational-model.xlsx"
+ROOT = Path(__file__).resolve().parent
+parser = argparse.ArgumentParser(description="Export the research workbook for the map.")
+parser.add_argument("workbook", nargs="?", default=ROOT / "canal-zone-relational-model.xlsx")
+parser.add_argument("--output-dir", type=Path, default=ROOT / "data")
+args = parser.parse_args()
+XLSX = args.workbook
 
 
 def norm(c):
@@ -87,6 +93,37 @@ def num(v):
     return None
 
 
+def text(v):
+    if v is None or pd.isna(v):
+        return ""
+    if isinstance(v, (datetime, date)):
+        return v.strftime("%Y-%m-%d")
+    if isinstance(v, (int, float)) and math.isfinite(v) and v == int(v):
+        return str(int(v))
+    return str(v).strip()
+
+
+def is_active(a):
+    status = text(a.get("record_status"))
+    if "record_status" in a.index:
+        return status != "Retracted"
+    history = re.findall(r"\b(RETRACTED|REINSTATED)\b", text(a.get("transcript_note")))
+    return not history or history[-1] != "RETRACTED"
+
+
+def unchecked(note):
+    return bool(re.search(
+        r"unverified|not (?:yet )?(?:read|verified)|page not read|lead only|"
+        r"metadata.only|year_guess|verification pending|verify (?:before|per record)",
+        note, re.I))
+
+
+def lifetime_overlap(e, start, end, extant):
+    if start is None or (end is None and not extant) or e["year"] is None:
+        return False
+    return e["year"] <= (end if end is not None else 9999) and (e["year_end"] or e["year"]) >= start
+
+
 def visibility(n_sources):
     if n_sources >= 9:
         return "High"
@@ -111,7 +148,7 @@ ORIGIN_LABEL = {
 def plain_origin(txt):
     # origins say who produced the source. Older workbook rows still carry a
     # "Colonial power" / "Colonized" prefix, so strip that off and expand the rest.
-    t = re.sub(r"^\s*(Colonial power|Colonized)\s*[—–-]\s*", "", str(txt))
+    t = re.sub(r"^\s*(Colonial power|Colonized)\s*[—–-]\s*", "", text(txt))
     return ORIGIN_LABEL.get(t, t)
 
 
@@ -150,17 +187,14 @@ NAME_NOTES = [
 
 
 def plain_name(txt):
-    t = str(txt)
+    t = text(txt)
     for pat, rep in NAME_NOTES:
         t = re.sub(pat, rep, t)
     return t
 
 
 def plain_text(txt):
-    if txt is None or (isinstance(txt, float) and pd.isna(txt)):
-        t = ""
-    else:
-        t = str(txt)
+    t = text(txt)
     for pat, rep in PLAIN:
         t = re.sub(pat, rep, t)
     return t
@@ -176,11 +210,15 @@ for _, p in places.iterrows():
     if isinstance(p.get("place_id"), str):
         name_by_id[str(p["place_id"])] = str(p.get("preferred_name", ""))
 place_ids = set(name_by_id)
+included_ids = {text(p.get("place_id")) for _, p in places.iterrows()
+                if text(p.get("place_id")) and text(p.get("shortlist_status")) not in ("Duplicate", "Declined")}
 
 warns = []
 
 
 for _, a in atts.iterrows():
+    if not is_active(a):
+        continue
     pid = a.get("place_id")
     sid = a.get("source_id")
     if not isinstance(pid, str) or not pid.strip():
@@ -203,7 +241,7 @@ for _, r in rels.iterrows():
         if v not in place_ids:
             warns.append(f"relation {rid}: {col} '{v}' not on the places sheet")
 
-FOOTPRINTS = "data/footprints.geojson"
+FOOTPRINTS = ROOT / "data" / "footprints.geojson"
 if os.path.exists(FOOTPRINTS):
     try:
         fps = json.load(open(FOOTPRINTS))
@@ -229,18 +267,18 @@ try:
     has_id = cdf["place_id"].apply(lambda v: isinstance(v, str) and bool(v.strip()))
     orphan_coords = int((cdf["lat"].notna() & cdf["lng"].notna() & ~has_id).sum())
     if orphan_coords:
-        warns.append(f"Coordinates sheet: {orphan_coords} typed lat/lng row(s) have a blank place_id - "
-                     f"the workbook needs an Excel recalculation (open, let it recalc, save) before this export is trustworthy")
+        raise ValueError(f"{orphan_coords} coordinate rows have no saved place ID; "
+                         "recalculate and save the workbook in Excel before exporting")
     for _, row in cdf.iterrows():
         pid = row.get("place_id")
         lat = row.get("lat")
         lng = row.get("lng")
         if isinstance(pid, str) and pid.strip() and pd.notna(lat) and pd.notna(lng):
-            coords[pid] = (float(lat), float(lng), str(row.get("status") or "set"))
+            coords[pid] = (float(lat), float(lng), text(row.get("status")), text(row.get("coord_source")))
             if pid not in place_ids:
                 warns.append(f"Coordinates sheet: place_id '{pid}' not on the places sheet")
-except Exception:
-    pass
+except Exception as e:
+    raise RuntimeError(f"Cannot read the Coordinates sheet: {e}") from e
 
 
 features = []
@@ -261,9 +299,10 @@ for _, p in places.iterrows():
     n_type = 0
     att_sy = None    
     att_ey = None
+    intervals = []
 
     for _, a in rows.iterrows():
-        if "RETRACTED" in str(a.get("transcript_note") or ""):
+        if not is_active(a):
             continue
         sid = a.get("source_id")
         src = sources.loc[sid] if sid in sources.index else None
@@ -271,13 +310,23 @@ for _, p in places.iterrows():
         title = plain_text(src["title"]) if src is not None else "?"
         atype = str(a.get("attestation_type", ""))
         wsy, wey = years(a.get("when_start"), a.get("when_end"))
+        note = text(a.get("transcript_note"))
         item = {
+            "id": text(a.get("attestation_id")),
             "type": atype,
             "name": plain_name(a.get("name_as_recorded", "")),
             "source": title,
             "origin": origin,
             "source_id": str(sid),
             "year": wsy,
+            "year_end": wey if wey is not None else wsy,
+            "date_text": " – ".join(dict.fromkeys(filter(None, [text(a.get("when_start")), text(a.get("when_end"))]))),
+            "confidence": text(a.get("confidence")),
+            "temporal_confidence": text(a.get("temporal_confidence")),
+            "reference": text(a.get("page_plate")),
+            "note": note,
+            "unchecked": unchecked(note),
+            "url": text(src.get("url")) if src is not None else "",
         }
 
         alat = num(a.get("att_lat"))
@@ -299,10 +348,11 @@ for _, p in places.iterrows():
             continue
         evidence.append(item)
 
-        if wsy is not None and atype != "Name":
+        if wsy is not None and atype != "Name" and not item["unchecked"]:
             wey = wey if wey is not None else wsy
             att_sy = wsy if att_sy is None else min(att_sy, wsy)
             att_ey = wey if att_ey is None else max(att_ey, wey)
+            intervals.append([wsy, wey])
         if atype == "Name":
             n_name += 1
         if atype == "Type":
@@ -317,24 +367,24 @@ for _, p in places.iterrows():
     sy, ey = years(p.get("start_date"), p.get("end_date"))
 
 
-    lifespan_absent = []
-    if sy is not None and (ey is not None or erasure.startswith("Persists")):
-        cutoff = ey if ey is not None else 9999
-        lifespan_absent = sorted({e["source_id"] for e in neg_evidence
-                                  if e["year"] is not None and sy <= e["year"] <= cutoff})
+    lifespan_absent = sorted({e["source_id"] for e in neg_evidence
+                             if lifetime_overlap(e, sy, ey, extant)})
 
 
     spread = 0.0
-    discord = False
+    discord = sp == "Disputed" and len(geom_claims) >= 2
+    comparison_incomplete = False
     for i in range(len(geom_claims)):
         for j in range(i + 1, len(geom_claims)):
             a = geom_claims[i]
             b = geom_claims[j]
             d = metres_between((a["lat"], a["lng"]), (b["lat"], b["lng"]))
             spread = max(spread, d)
-            ua = a.get("uncertainty_m") or 250
-            ub = b.get("uncertainty_m") or 250
-            if d > ua + ub:
+            ua = a.get("uncertainty_m")
+            ub = b.get("uncertainty_m")
+            if ua is None or ub is None:
+                comparison_incomplete = True
+            elif a["source_id"] != b["source_id"] and d > ua + ub:
                 discord = True
 
 
@@ -347,6 +397,8 @@ for _, p in places.iterrows():
         "place_type": str(p.get("place_type", "")),
         "scale": str(p.get("scale", "")),
         "parent": name_by_id.get(str(p.get("parent_id", "")), ""),
+        "parent_id": text(p.get("parent_id")),
+        "variant_names": [n.strip() for n in text(p.get("variant_names")).split(";") if n.strip()],
         "theme": plain_text(p.get("historical_theme", "")),
         "population_type": population_type,
         "erasure_type": str(p.get("erasure_type", "")),
@@ -356,14 +408,18 @@ for _, p in places.iterrows():
         "geometry_claims": geom_claims,
         "claim_spread_m": round(spread) if spread else 0,
         "sources_disagree": discord,
+        "coordinate_comparison_incomplete": comparison_incomplete,
         "date_certainty": str(p.get("date_certainty", "")),
         "start_year": sy, "end_year": ey,
+        "start_date": text(p.get("start_date")), "end_date": text(p.get("end_date")),
         "attested_start": att_sy, "attested_end": att_ey,
+        "attested_intervals": sorted({tuple(interval) for interval in intervals}),
         "traces": traces, "n_sources": n_sources,
         "archival_visibility": visibility(n_sources),
         "name_claims": n_name, "type_claims": n_type,
         "negative_traces": neg, "extant": extant,
         "lifespan_absent": len(lifespan_absent),
+        "unchecked_mentions": sum(e["unchecked"] for e in evidence),
         "evidence": evidence, "neg_evidence": neg_evidence,
     }
 
@@ -383,14 +439,20 @@ for _, p in places.iterrows():
     lng = None
     cstatus = None
     if pid in coords:
-        lat, lng, st = coords[pid]
-        cstatus = "surveyed" if "survey" in st.lower() else "placeholder"
+        lat, lng, st, coordinate_source = coords[pid]
+        if "placeholder" in st.lower():
+            cstatus = "placeholder"
+        elif "survey" in st.lower():
+            cstatus = "surveyed"
+        else:
+            cstatus = "from sources" if coordinate_source else "recorded coordinate"
     elif geom_claims:
         lat = sum(c["lat"] for c in geom_claims) / len(geom_claims)
         lng = sum(c["lng"] for c in geom_claims) / len(geom_claims)
         cstatus = "from sources"
 
     if lat is not None:
+        rec["coord_status"] = cstatus
         f = dict(rec)
         f["coord_status"] = cstatus
         features.append({
@@ -428,6 +490,7 @@ try:
             "affiliation": plain_origin(s(a.get("affiliation"))),
             "holdings": plain_text(s(a.get("holdings_display"))),
             "institution": plain_text(s(a.get("institution"))),
+            "notes": text(a.get("notes")),
         }
         if not rec["affiliation"] or not rec["holdings"]:
             warns.append(f"Corpus {aid}: missing affiliation/holdings_display - fill it on the Corpus sheet")
@@ -457,6 +520,9 @@ for sid, s_row in sources.iterrows():
         "medium": str(s_row.get("medium", "")),
         "reliability": str(s_row.get("reliability", "")),
         "archive": "" if aid == "-" else aid,
+        "url": text(s_row.get("url")),
+        "reference": text(s_row.get("archive_ref")),
+        "notes": text(s_row.get("notes")),
     })
 
 
@@ -464,6 +530,8 @@ relations = []
 for _, r in rels.iterrows():
     rid = r.get("relation_id")
     if not isinstance(rid, str) or not rid.strip():
+        continue
+    if text(r.get("place_id")) not in included_ids or text(r.get("related_id")) not in included_ids:
         continue
     rsy, rey = years(r.get("when_start"), r.get("when_end"))
     note = plain_text(re.sub(r"\s*\[[^\]]*\]", "", str(r.get("note") or ""))).strip()
@@ -482,20 +550,21 @@ meta = {
     "generated": date.today().isoformat(),
     "n_places": len(records),
     "n_located": len(features),
-    "n_attestations": int(atts["place_id"].notna().sum()),
+    "n_attestations": sum(len(r["evidence"]) + len(r["neg_evidence"]) for r in records),
+    "n_workbook_attestations": int(atts["place_id"].notna().sum()),
     "n_sources": len(src_list),
     "n_relations": len(relations),
     "n_archives": len(archives),
 }
 
-os.makedirs("data", exist_ok=True)
-json.dump({"type": "FeatureCollection", "features": features},
-          open("data/places.geojson", "w"), indent=1)
-json.dump(records, open("data/records.json", "w"), indent=1)
-json.dump(src_list, open("data/sources.json", "w"), indent=1)
-json.dump(relations, open("data/relations.json", "w"), indent=1)
-json.dump(archives, open("data/archives.json", "w"), indent=1)
-json.dump(meta, open("data/meta.json", "w"), indent=1)
+args.output_dir.mkdir(parents=True, exist_ok=True)
+for filename, data in {
+    "places.geojson": {"type": "FeatureCollection", "features": features},
+    "records.json": records, "sources.json": src_list, "relations.json": relations,
+    "archives.json": archives, "meta.json": meta,
+}.items():
+    with (args.output_dir / filename).open("w", encoding="utf-8") as output:
+        json.dump(data, output, ensure_ascii=False, allow_nan=False, indent=1)
 
 print(f"wrote {len(features)} located features and {len(records)} records")
 print(f"  located:   {len(features)}")

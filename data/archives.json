@@ -9,8 +9,9 @@
   "access": "Onsite + partial online",
   "digitization": "Partial",
   "affiliation": "United States federal",
-  "holdings": "~9,240 cartographic items / 125 cubic feet on paper at College Park; Compagnie Universelle general and town-site maps 1881\u201397; Isthmian Canal Commission lock and dam plans, 1913 route plates; textual labor and administrative series; digitized: construction photographs (series 185-G), land and claims index cards",
-  "institution": "United States National Archives"
+  "holdings": "~9,240 cartographic items / 125 cubic feet on paper at College Park; Compagnie Universelle general and town-site maps 1881–97; Isthmian Canal Commission lock and dam plans, 1913 route plates; textual labor and administrative series; digitized: construction photographs (series 185-G), land and claims index cards",
+  "institution": "United States National Archives",
+  "notes": "US official; the dominant archive. PI-91 (1956) inventories the CARTOGRAPHIC series only: ~9,240 items / 125 cu. ft. as of 1955, on paper at College Park - searched 2026-09 via catalog metadata ONLY, never full text. Series: Cie Universelle general maps 1881-1900 (154 items) and detailed maps/plans incl. town-site plans 1881-97 (6,620 items); Cie Nouvelle cross sections/area/sectional maps 1889-99 (~730 items incl. Lago de Bohio and Alhajuela series); Nicaragua CC 1895-99 (447); ICC 1899-1913 (~1,000 incl. lock and dam plans, 1913 route plates); The Panama Canal post-1914 (6 items only - the working cartography stayed in Panama). Appendix II place-name index mined 2026-09 for variants (Bas Matachin, De Lesseps City=Gatun, Alto Emperador, Monkey Hill=Mt Hope, Balboa=La Boca) and settlements (Whitehouse, Vamos Vamos, Pena Blanca, Cartagenita, Palo Grande, Cocoli). Textual records separately inventoried (Giroux, unpublished). Digitized online: 185-G construction photos 1887-1940 (partial), 185-CZ operations c.1938-60, 185-CC color 1979-84, aerial (partial); plus digitized index-card and land/claims series (Indexes to Central Files, Land Transactions, Land Claims/Awards/Deeds, Marriage Licenses). Catalog harvest 2026-09: data/nara/ (10,456 records, 59 names)."
  },
  {
   "id": "ARC-02",
@@ -22,8 +23,9 @@
   "access": "Digitized (selected)",
   "digitization": "Partial",
   "affiliation": "United States federal",
-  "holdings": "Canal Zone sheets in the Geography and Map Division, including the 1911 Property Map; Culebra town masters 1905\u201310; 1908\u201309 canal surveys; 64 catalog records, all relevant sheets fetched",
-  "institution": "Library of Congress"
+  "holdings": "Canal Zone sheets in the Geography and Map Division, including the 1911 Property Map; Culebra town masters 1905–10; 1908–09 canal surveys; 64 catalog records, all relevant sheets fetched",
+  "institution": "Library of Congress",
+  "notes": "Official cartographic record."
  },
  {
   "id": "ARC-03",
@@ -35,8 +37,9 @@
   "access": "Fully digitized",
   "digitization": "Full",
   "affiliation": "United States official record (digitized at the University of Florida)",
-  "holdings": "The Canal Record, official weekly of the Isthmian Canal Commission; 28 volumes 1907\u201341, full text online",
-  "institution": "University of Florida"
+  "holdings": "The Canal Record, official weekly of the Isthmian Canal Commission; 28 volumes 1907–41, full text online",
+  "institution": "University of Florida",
+  "notes": "Text-searchable; relocation notices. Digitized at UFDC bibid UF00097368 (28 volumes) - page-level harvest 2026-09 in data/ufdc/."
  },
  {
   "id": "ARC-04",
@@ -49,7 +52,8 @@
   "digitization": "None (catalog only)",
   "affiliation": "Panamanian",
   "holdings": "Books; cartography (4% of the reserve); photographs (3%); postcards and memorabilia; Archivo de Historia Oral (onsite only); catalog metadata online, no digital objects served",
-  "institution": "Museo del Canal Interoce\u00e1nico de Panam\u00e1"
+  "institution": "Museo del Canal Interoceánico de Panamá",
+  "notes": "Panamanian-side counter-archive. Swept 2026-09-13 via typismuci.museodelcanal.com (Koha OPAC). ASYMMETRY FINDING: unlike LOC/UFDC/IA, the Museo serves NO digital objects remotely — only catalog metadata of physical holdings (the sole images are the site logo + Amazon cover thumbnails). Keyword counts (Zona del Canal 54, mapa 47, fotografía 115) are matches on book description fields, not standalone photo/map records; the reserve's own 4% cartography / 3% photos / 5% postcards are not cataloged online. Town-name recall depends on cataloguers' notes, not full text: Gatun 10, Culebra 7, Chagres 7, Gamboa 7, Paraíso 8, Bohío 4, Emperador 4, Gorgona 1, Matachín 1, Tabernilla 0. Oral History Archive exists but is onsite-only. Concrete yield: 1 record (Chen 2014, biblio 6326) documenting the Chinese-community dimension of Emperador, Gorgona, Matachín, Paraíso incl. a 1908 Chinese-population-by-town census. Also held (physical, undigitized): Tejeira, *Pueblos perdidos* (1962, novel); Araúz Torres, *Los mapas antiguos de Panamá y Darién 1503-1879* (2014). Next step to deepen: email scan request (remote) or on-site visit."
  },
  {
   "id": "ARC-05",
@@ -61,8 +65,9 @@
   "access": "Remote: catalogues only; components not full-text online",
   "digitization": "Minimal",
   "affiliation": "West Indian / Caribbean (part held at the United Kingdom's colonial archive at Kew)",
-  "holdings": "Barbados: District A Emigrants Registers \u00d73, Savings Bank Registers 1853\u20131918 \u00d720, Official Gazettes; Jamaica: Colonial Secretary records on Panama, Jamaica Gazette 1905\u201315; Saint Lucia National Archives; Barbados Museum: Hutchinson postcards, Lady Carter Visitor Book; United Kingdom National Archives at Kew, Mallet family papers; none remotely searchable",
-  "institution": "Silver Men consortium"
+  "holdings": "Barbados: District A Emigrants Registers ×3, Savings Bank Registers 1853–1918 ×20, Official Gazettes; Jamaica: Colonial Secretary records on Panama, Jamaica Gazette 1905–15; Saint Lucia National Archives; Barbados Museum: Hutchinson postcards, Lady Carter Visitor Book; United Kingdom National Archives at Kew, Mallet family papers; none remotely searchable",
+  "institution": "Silver Men consortium",
+  "notes": "Swept remotely 2026-09-13 (data/silvermen/): UNESCO nomination inventoried - Barbados Dept. of Archives (District A Emigrants Registers x3, Savings Bank Registers 1853-1918 x20, Official Gazettes 1891/1904/1906), Barbados Museum (Hutchinson postcards/stamps, Lady Carter Visitor Book), Jamaica Archives (Colonial Secretary + Central Govt re Panama, Jamaica Gazette 1905-15), St Lucia NA, UK NA + Mallet private, NARA II, UF. None of the registers are remotely searchable - the archival asymmetry extends to the counter-archive itself (finding, mirrors ARC-04). Digitized Caribbean voice lives in ARC-09/S-035. Onsite/reproduction routes documented in REPORT_SILVERMEN.md. | 2026-09-13: the consortium-adjacent WORKER VOICE (IHS 1963 letters) IS digitized on dLOC (S-036) - the institutional registers remain reading-room only; both facts now in evidence."
  },
  {
   "id": "ARC-06",
@@ -75,7 +80,8 @@
   "digitization": "Full",
   "affiliation": "Zonian settler community",
   "holdings": "Web compilation of Zonian memory: village pages, photographs, town lists; lead-generator, corroborate elsewhere",
-  "institution": "czbrats.com (website of former Canal Zone residents)"
+  "institution": "czbrats.com (website of former Canal Zone residents)",
+  "notes": "Lead-generator; corroborate elsewhere."
  },
  {
   "id": "ARC-08",
@@ -88,7 +94,8 @@
   "digitization": "Partial",
   "affiliation": "United States institution",
   "holdings": "45,000 'Canal Zone' records, searchable in full text (National Museum of Natural History specimen localities); Fishbaugh photograph album (27 of 100 views digitized); 719 Panama Canal Company photonegatives, captions untranscribed; Smithsonian Tropical Research Institute map library, 1,000+ sheets, onsite only",
-  "institution": "Smithsonian Institution"
+  "institution": "Smithsonian Institution",
+  "notes": "Three layers (2026-09 survey, data/smithsonian/): (1) Open Access API - 45k 'Canal Zone' records, NMNH specimen localities = independent scientific attestation corpus; drowned hamlets (Barbacoas, Bailamonos, Ahorca Lagarto, Cruz de Juan Gallego) score ZERO - absence extends to natural history. (2) NMAH Archives Center: Fishbaugh album (AC.1021, 27/100 views digitized, read); PCC photonegatives (AC.1116, 719 items, captions NOT transcribed digitally - EAD lists accession numbers only); related albums AC.0708/1015/1039/1040. (3) STRI Library map collection: 1,000+ maps, onsite-only, inventory (Jan 2018) covers cabinets 1-11 only; mostly mid-century AMS topographic sheets incl. 1:25k sheets named Gatun, Frijoles, Las Cruces, Barro Colorado. Sitewide search UIs are bot-walled; API + sirismm EADs are the machine route."
  },
  {
   "id": "ARC-09",
@@ -100,8 +107,9 @@
   "access": "Digitized (open, remote, searchable in full text)",
   "digitization": "Full (for what is digitized)",
   "affiliation": "Caribbean press (digitized at the University of Florida)",
-  "holdings": "Caribbean presses 1880\u20131950 \u2014 Bridgetown, Kingston, Nassau, Hamilton; newspapers, serials, books; Isthmian Historical Society 'Silver People' competition letters, 1963; open and searchable in full text",
-  "institution": "University of Florida"
+  "holdings": "Caribbean presses 1880–1950 — Bridgetown, Kingston, Nassau, Hamilton; newspapers, serials, books; Isthmian Historical Society 'Silver People' competition letters, 1963; open and searchable in full text",
+  "institution": "University of Florida",
+  "notes": "Added 2026-09-13 from the Silver Men sweep: the digitized Caribbean-press voice. Probe boundary: item-level, name+panama co-occurrence; KWIC pass pending. See S-035 + data/silvermen/. | Silver People letters probe 2026-09-13: the letters (AA00016037/S-036) sit in this corpus - 62/122 place names present; imports logged on S-036."
  },
  {
   "id": "ARC-10",
@@ -113,8 +121,9 @@
   "access": "Fully digitized (open in a browser; bulk downloads blocked)",
   "digitization": "Full (for what is digitized)",
   "affiliation": "United States federal (digitized United States press)",
-  "holdings": "Digitized United States and territorial newspapers; canal-era syndications including the Canal Record 'vanishing villages' notices; Saint Croix Avis French-era canal reports 1882\u201387; full text searchable; the searched window 1880\u20131920 spans the French era through construction",
-  "institution": "Library of Congress"
+  "holdings": "Digitized United States and territorial newspapers; canal-era syndications including the Canal Record 'vanishing villages' notices; Saint Croix Avis French-era canal reports 1882–87; full text searchable; the searched window 1880–1920 spans the French era through construction",
+  "institution": "Library of Congress",
+  "notes": "US press corpus behind S-009. Roster probe 2026-09-13 (data/chronicling-america/chronam_probe_20260913.csv): 64 never-queried places, page-level counts for \"PLACE\"+\"Panama\", 1880-1920. | 2026-09-13 (later): name/repository spelled out for the web archives section; sources S-009..S-013 linked via archive_id."
  },
  {
   "id": "ARC-11",
@@ -127,7 +136,8 @@
   "digitization": "Full",
   "affiliation": "United States canal-era texts (nonprofit aggregator)",
   "holdings": "1,315 digitized canal-era volumes; annual reports, memoirs, guidebooks; ~72 map scans copied from other repositories",
-  "institution": "Internet Archive"
+  "institution": "Internet Archive",
+  "notes": "Registered 2026-09-13 when sources gained archive links. 1,315 optical-character-read texts harvested (S-021); ~72 map scans also used for georeferencing (data/georef/ia_maps/)."
  },
  {
   "id": "ARC-12",
@@ -140,11 +150,12 @@
   "digitization": "Full",
   "affiliation": "United States press (university-held)",
   "holdings": "Eastern Reflector and Daily Reflector newspaper runs; Navy oral histories; one 1927 Canal Zone map sheet (Robert Morgan Papers)",
-  "institution": "East Carolina University"
+  "institution": "East Carolina University",
+  "notes": "Swept 2026-09-07 (data/ecu/, SOURCES_SWEPT); row registered 2026-09-13 when sources gained archive links. One relevant map sheet; Greenville press corpus mostly outside the 1880-1920 window."
  },
  {
   "id": "ARC-13",
-  "name": "Perry-Casta\u00f1eda Library map collection",
+  "name": "Perry-Castañeda Library map collection",
   "repository": "University of Texas at Austin",
   "scope": "In scope - supporting",
   "period": "1911-1953",
@@ -153,7 +164,8 @@
   "digitization": "Full",
   "affiliation": "United States academic map collection",
   "holdings": "17 Canal Zone map sheets; Shepherd's Historical Atlas 1911 Panama Canal plate",
-  "institution": "University of Texas at Austin"
+  "institution": "University of Texas at Austin",
+  "notes": "Registered 2026-09-13 when sources gained archive links. 17 Canal Zone sheets fetched; Shepherd 1911 plate = S-018 (A-0376..A-0400)."
  },
  {
   "id": "ARC-14",
@@ -166,7 +178,8 @@
   "digitization": "Full",
   "affiliation": "United States federal",
   "holdings": "1940 census enumeration-district maps of the Canal Zone (series A3378); 1950 counterpart; late street-level views of the towns",
-  "institution": "United States National Archives"
+  "institution": "United States National Archives",
+  "notes": "Recognised 2026-09-13 as maps (data/census/, S-033/S-034); georeferencing candidates. Registered when sources gained archive links."
  },
  {
   "id": "ARC-15",
@@ -179,7 +192,8 @@
   "digitization": "Full",
   "affiliation": "United States private map collection (Stanford University)",
   "holdings": "7 Canal Zone map sheets, fetched at full resolution; used as georeferencing and tracing bases, not yet as attestation sources",
-  "institution": "Stanford University"
+  "institution": "Stanford University",
+  "notes": "Registered 2026-09-13. 7 Canal Zone sheets fetched full-resolution via LUNA (data/georef/, SOURCES_SWEPT); a 1912 Panama plate was deleted as an Internet Archive duplicate. Georeferencing collection only - no source rows yet."
  },
  {
   "id": "ARC-16",
@@ -192,7 +206,8 @@
   "digitization": "Full",
   "affiliation": "mirrored United States and European cartography (volunteer aggregator)",
   "holdings": "87 Canal Zone map files; Lloyd 1830 charts; malaria and sanitation maps; a judicial-districts map mirrored from the United States National Archives; used as georeferencing and tracing bases, not yet as attestation sources",
-  "institution": "Wikimedia Commons"
+  "institution": "Wikimedia Commons",
+  "notes": "Registered 2026-09-13. 87 files, sweep COMPLETE 2026-09-07 (data/georef/commons_maps/, SOURCES_SWEPT); all verified against declared sizes. Georeferencing collection only - no source rows yet."
  },
  {
   "id": "ARC-17",
@@ -205,11 +220,12 @@
   "digitization": "Full (for what is digitized)",
   "affiliation": "French (Compagnie Universelle du Canal Interoceanique)",
   "holdings": "Boutan 1880: geological survey naming the whole village chain as canal-line stations; Verbrugghe 1879: narrative of the Wyse-Reclus route reconnaissance; Charles-Roux 1886: official French canal-progress report (Buhio-Soldado \"un beau campement\"); 23 canal-era maps (cartes), downloadable in full resolution, not yet consulted; searchable in full text remotely",
-  "institution": "Biblioth\u00e8que nationale de France"
+  "institution": "Bibliothèque nationale de France",
+  "notes": "French colonial-canal record; fills the Compagnie Universelle period (1879-1904) that the US archive predates. Swept 2026-09-14 via Gallica SRU + ContentSearch + IIIF (curl-open, User-Agent required). Anchor sources: Boutan 1880 geological survey (names the whole village chain as canal-line stations), Verbrugghe 1879 Wyse-Reclus route narrative, Charles-Roux 1886 progress report (Buhio-Soldado 'un beau campement'; Gorgona/Matachin/Mamei as km-marked route stations). ASYMMETRY: the French colonial-power archive is MORE openly accessible remotely than the Panamanian counter-archive (ARC-04 Museo = onsite/metadata-only). Harvest: data/gallica/. Still open: ANOM (Aix) Compagnie internal records; Gallica canal-era maps (23 cartes found, IIIF-downloadable) not yet pulled."
  },
  {
   "id": "ARC-18",
-  "name": "La Estrella de Panam\u00e1, digitized newspaper run",
+  "name": "La Estrella de Panamá, digitized newspaper run",
   "repository": "Library of Congress, Serial and Government Publications Division",
   "scope": "In scope - counter-archive",
   "period": "1849-current",
@@ -218,7 +234,8 @@
   "digitization": "Full (for the Library of Congress run)",
   "affiliation": "Panamanian press (digitized at the Library of Congress)",
   "holdings": "La Estrella de Panama, the Panamanian newspaper of record; digitized run 1849-current at the Library of Congress; searchable in full text; Spanish spellings need care, and names shared with other places more so",
-  "institution": "Library of Congress"
+  "institution": "Library of Congress",
+  "notes": "Added 2026-09-14 (Matachin-hunt bycatch): the Panamanian press voice. Probe boundary: phrase search vs Spanish OCR, item=page; ambiguous generic-Spanish names excluded from claims. Renumbered ARC-10->ARC-15 2026-09-14 (id space taken by the archives-section batch). See S-044 + data/estrella/."
  },
  {
   "id": "ARC-19",
@@ -230,8 +247,9 @@
   "access": "Fully digitized (open)",
   "digitization": "Full",
   "affiliation": "United States university collection",
-  "holdings": "Maps from the former Panama Canal Museum, transferred to the University of Florida; 1845 Garella topographic map of the isthmus; 1947 Crist\u00f3bal\u2013Col\u00f3n\u2013Mount Hope city sheet",
-  "institution": "University of Florida"
+  "holdings": "Maps from the former Panama Canal Museum, transferred to the University of Florida; 1845 Garella topographic map of the isthmus; 1947 Cristóbal–Colón–Mount Hope city sheet",
+  "institution": "University of Florida",
+  "notes": "Registered 2026-09-15 when the archives section was regrouped by institution: sources S-045 (1947 Cristobal-Colon-Mount Hope sheet, AA00038126), S-046 (Hammond atlas page, AA00038443) and S-048 (Garella 1845 map, UF00100942) had no archive link."
  },
  {
   "id": "ARC-20",
@@ -244,6 +262,7 @@
   "digitization": "Full (published monograph)",
   "affiliation": "Secondary - later scholarship",
   "holdings": "Erased: The Untold Story of the Panama Canal (Marixa Lasso, 2019) - the depopulation of the Zone towns 1912-1916 told from Panamanian records",
-  "institution": "Published scholarship"
+  "institution": "Published scholarship",
+  "notes": "Registered 2026-09-16 so the sources panel carries the model's one secondary-literature source (S-002). The corpus is otherwise archives; later scholarship is tagged separately in the panel."
  }
 ]

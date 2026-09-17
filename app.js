@@ -37,6 +37,22 @@ function stoodIn(p,y){
   return y>=p.start_year && y<=(p.end_year ?? 9999);
 }
 
+function evidenceInLifetime(p,e){
+  if(e.year==null || p.start_year==null) return false;
+  if(p.end_year==null && !p.extant) return false;
+  return e.year<=(p.end_year ?? 9999) && (e.year_end ?? e.year)>=p.start_year;
+}
+
+function datedEvidenceAt(p,y){
+  return (p.attested_intervals||[]).some(([start,end])=>y>=start && y<=end);
+}
+
+function lifespanText(p){
+  const start = p.start_date || p.start_year || 'start unknown';
+  const end = p.end_date || p.end_year || (p.extant ? 'present' : 'end unknown');
+  return `${start} – ${end}`;
+}
+
 
 function claimsOf(p){
   return p.geometry_claims || [];
@@ -253,7 +269,7 @@ Promise.all([
 
   //name findable even if old
   allRecords.forEach(r=>{
-    const names = new Set([r.name]);
+    const names = new Set([r.name, ...(r.variant_names||[])]);
     (r.evidence||[]).forEach(a=>{
       const n = (a.name||'').trim();
       if(n && !n.startsWith('(')) names.add(n);   // "(PI-91 place index)" is a harvest note
@@ -320,8 +336,8 @@ function buildFilterOptions(records){
 
   const fa = document.getElementById('fAbs');
   const absOpts = [
-    ['while','left out by a source made in its lifetime'],
-    ['never','never left out in its lifetime']
+    ['while','has an unsuccessful search within its lifespan'],
+    ['never','no unsuccessful search recorded within its lifespan']
   ];
   absOpts.forEach(([v,t])=>{
     const o = document.createElement('option');
@@ -360,9 +376,7 @@ function liveOpacity(Y,p){
   const e = p.end_year;
   if(s!=null && Y<s) return 0;
   if(e!=null && Y>e) return 0;
-  const as = p.attested_start;
-  const ae = (p.attested_end==null) ? p.attested_start : p.attested_end;
-  if(as!=null && Y>=as && Y<=ae) return 1;
+  if(datedEvidenceAt(p,Y)) return 1;
   return 0.55;
 }
 
@@ -621,8 +635,6 @@ function yrSpan(ev){
 function renderUnloc(){
   const located = new Set(feats.map(f=>f.properties.id));
   let unl = allRecords.filter(r=>!located.has(r.id));
-  // TEMPORARY hide places named by fewer than 2 distinct archives.
-  unl = unl.filter(r=>archTrail(r.evidence||[]).length>=2);
   unl.sort((a,b)=>((b.traces||0)+(b.negative_traces||0)) - ((a.traces||0)+(a.negative_traces||0)));
   document.getElementById('unloc').innerHTML = unl.map(u=>{
     const nH = archTrail(u.evidence||[]).length;
@@ -657,11 +669,11 @@ function renderLoc(){
   document.getElementById('loclist').innerHTML = rows.map(p=>{
     const kids = (kidsOf[p.name] && p.scale==='Town') ? kidsOf[p.name].length : 0;
     const bits = [
-      `<span class="uyr">~${p.start_year||'?'}–${p.end_year||'persists'}</span>`,
+      `<span class="uyr">${escH(lifespanText(p))}</span>`,
       `<span class="uyr">${p.scale||p.place_type}</span>`,
       `<span class="ub ub-h">${p.n_sources} source${p.n_sources!==1?'s':''}</span>`
     ];
-    if(p.lifespan_absent) bits.push(`<span class="ub ub-m">left out by ${p.lifespan_absent} in its lifetime</span>`);
+    if(p.lifespan_absent) bits.push(`<span class="ub ub-m">not found in ${p.lifespan_absent} source${p.lifespan_absent===1?'':'s'} searched for its lifetime</span>`);
     if(kids) bits.push(`<span class="ub ub-a">${kids} feature${kids!==1?'s':''} within</span>`);
     return `<div class="uitem" data-id="${p.id}">
       <div class="un-head"><span class="dot-abs" style="${locDotCSS(p)}"></span><span class="un-name">${p.name}</span></div>
@@ -828,27 +840,27 @@ document.addEventListener('dblclick',e=>{
 
 function popupHTML(p){
   const e = p.end_year;
-  const ae = (p.attested_end==null) ? p.attested_start : p.attested_end;
-  const attestedNow = (p.attested_start!=null && year>=p.attested_start && year<=ae);
+  const attestedNow = datedEvidenceAt(p,year);
   let status;
-  if(p.start_year && year<p.start_year) status = 'not yet founded';
+  if(allTime) status = 'all recorded periods; evidence dates are listed below';
+  else if(p.start_year && year<p.start_year) status = 'before the recorded start date';
   else if(e && year>e) status = 'removed / absent';
-  else if(attestedNow) status = 'present - a dated source covers this year';
-  else status = 'present - claimed, but no source is dated to this year';
+  else if(attestedNow) status = 'dated evidence covers this year';
+  else status = 'shown within the recorded date bounds; no dated evidence covers this year';
 
   const srcs = p.evidence.length
     ? srcRows(p.evidence)
     : '<div class="evo">no source mentions it directly</div>';
 
-  const nIn = (p.neg_evidence||[]).filter(e=>stoodIn(p,e.year));
-  const nOut = (p.neg_evidence||[]).filter(e=>!stoodIn(p,e.year));
+  const nIn = (p.neg_evidence||[]).filter(e=>evidenceInLifetime(p,e));
+  const nOut = (p.neg_evidence||[]).filter(e=>!evidenceInLifetime(p,e));
   let negs = '';
   if(nIn.length){
-    negs += `<div class="pop-srcttl">Left out by sources made in its lifetime (${nIn.length}):</div>` + srcRows(nIn);
+    negs += `<div class="pop-srcttl">Not found in searches overlapping its lifespan (${new Set(nIn.map(e=>e.source_id)).size} sources):</div>` + srcRows(nIn);
   }
   if(nOut.length){
-    negs += `<div class="pop-srcttl">Also searched, absent (${nOut.length}):</div>`
-         + '<div class="evo">made before it existed, after it was removed, or undated</div>'
+    negs += `<div class="pop-srcttl">Other searches with no result (${new Set(nOut.map(e=>e.source_id)).size} sources):</div>`
+         + '<div class="evo">Outside its recorded lifespan, or with dates that cannot be compared.</div>'
          + srcRows(nOut);
   }
 
@@ -875,18 +887,36 @@ const EV_TYPE = {
 function srcRows(list){
   const g = {};
   list.forEach(a=>{
-    if(!g[a.source]) g[a.source] = {origin:a.origin, n:0, types:new Set()};
-    const e = g[a.source];
+    const key = a.source_id || a.source;
+    if(!g[key]) g[key] = {title:a.source, origin:a.origin, url:a.url, n:0, types:new Set(), entries:[]};
+    const e = g[key];
     e.n++;
+    e.entries.push(a);
     const t = EV_TYPE[a.type] ?? a.type;
     if(t) e.types.add(t);
   });
 
-  return Object.entries(g).map(([title,v])=>{
+  return Object.values(g).map(v=>{
     const count = v.n>1 ? '&times;'+v.n : '';
     const types = v.types.size ? ' · '+[...v.types].join(' · ') : '';
-    return `<div class="ev"><span class="ev-k">${count}</span><span class="ev-v"><span class="evttl">${title}</span> <span class="evo">${v.origin}${types}</span></span></div>`;
+    const title = sourceLink(v.title,v.url);
+    const pending = v.entries.some(a=>a.unchecked) ? '<span class="evidence-pending">includes unchecked search results</span>' : '';
+    const entries = v.entries.map(a=>{
+      const dates = a.date_text || (a.year==null ? 'undated' : a.year_end && a.year_end!==a.year ? `${a.year}–${a.year_end}` : a.year);
+      const confidence = [a.confidence && `evidence: ${a.confidence}`,a.temporal_confidence && `date: ${a.temporal_confidence}`].filter(Boolean).join(' · ');
+      const reference = a.reference && a.reference!=='-' ? `<div>${sourceLink(a.reference,a.reference)}</div>` : '';
+      const page = a.page_plate ? `<div>Page / plate: ${escH(a.page_plate)}</div>` : '';
+      return `<div class="evidence-entry"><div><b>${escH(a.id||'')}</b> · ${escH(dates)}${a.unchecked?' · unchecked search result':''}</div>${reference}${page}${confidence?`<div class="evo">${escH(confidence)}</div>`:''}${a.note?`<p class="evidence-note">${escH(a.note)}</p>`:''}</div>`;
+    }).join('');
+    return `<details class="source-evidence"><summary><span class="evttl">${title}</span> <span class="evo">${count} ${escH(v.origin+types)}</span>${pending}</summary>${entries}</details>`;
   }).join('');
+}
+
+function sourceLink(label,url){
+  if(/^https?:\/\/[^\s]+$/i.test(url||'')){
+    return `<a href="${escH(url)}" target="_blank" rel="noopener noreferrer">${escH(label)}</a>`;
+  }
+  return escH(label);
 }
 
 
@@ -930,12 +960,12 @@ function footSrc(src){
 function geomLocated(p,cl){
   if(cl.length){
     const rows = cl.map(c=>{
-      const unc = c.uncertainty_m ? '±'+c.uncertainty_m+'m' : '';
+      const unc = c.uncertainty_m!=null ? '±'+c.uncertainty_m+'m' : 'unstated';
       const method = METHOD[c.method] ?? c.method;
-      return `<div class="ev"><span class="ev-k">${unc}</span><span class="ev-v"><span class="evttl">${c.source}</span> <span class="evo">${c.origin} · ${method}</span></span></div>`;
+      return `<div class="ev"><span class="ev-k">${unc}</span><span class="ev-v"><span class="evttl">${escH(c.source)}</span> <span class="evo">${escH(c.origin)} · ${escH(method)}</span></span></div>`;
     }).join('');
     const spread = p.claim_spread_m
-      ? `<div class="evo">the sources disagree by up to ${p.claim_spread_m} m; both claims are kept</div>`
+      ? `<div class="evo">Recorded placements span ${p.claim_spread_m} m.${p.sources_disagree?' Their uncertainty ranges do not all overlap, or the location is marked disputed.':''}${p.coordinate_comparison_incomplete?' Some uncertainty radii are unstated.':''}</div>`
       : '';
     return `<div class="pop-srcttl">Where each source puts it (${cl.length}):</div>` + rows + spread;
   }
@@ -959,9 +989,9 @@ function popupBody(p,status,geom,srcs,negs){
   p.evidence.forEach(a=>{
     if(!a.name || !a.name.trim()) return;
     const k = a.name.trim();
-    if(!byName[k]) byName[k] = {year:null, n:0, src:a.source};
+    if(!byName[k]) byName[k] = {year:null, sources:new Set(), src:a.source};
     const e = byName[k];
-    e.n++;
+    e.sources.add(a.source_id || a.source);
     if(a.year!=null && (e.year==null || a.year<e.year)){
       e.year = a.year;
       e.src = a.source;
@@ -972,8 +1002,8 @@ function popupBody(p,status,geom,srcs,negs){
   if(names.length>=2){
     names.sort((a,b)=>(a[1].year||9999)-(b[1].year||9999));
     ribbon = `<div class="pop-srcttl">Names as recorded:</div>` + names.map(([nm,v])=>{
-      const many = v.n>1 ? v.n+' sources, first: ' : '';
-      return `<div class="ev"><span class="ev-k">${v.year||'undated'}</span><span class="ev-v"><b>${nm}</b> <span class="evo">${many}${v.src}</span></span></div>`;
+      const many = v.sources.size>1 ? v.sources.size+' sources, earliest dated mention: ' : '';
+      return `<div class="ev"><span class="ev-k">${v.year||'undated'}</span><span class="ev-v"><b>${escH(nm)}</b> <span class="evo">${many}${escH(v.src)}</span></span></div>`;
     }).join('');
   }
 
@@ -1013,14 +1043,15 @@ function popupBody(p,status,geom,srcs,negs){
     <div class="pop-sub">${p.scale?p.scale+' &middot; ':''}${p.place_type} &middot; ${p.theme}${parentTxt}</div>
     ${p.note?`<div class="pop-note">${p.note}</div>`:''}
     <div class="pop-tags">
-      <span>~${p.start_year||'?'}-${p.end_year||'persists'}</span>
+      <span>${escH(lifespanText(p))}</span>
       <span>spatial: ${p.spatial_certainty}</span>
       ${p.population_type?`<span>${p.population_type}</span>`:''}
-      ${p.lifespan_absent?`<span class="warn">left out by ${p.lifespan_absent} source${p.lifespan_absent>1?'s':''} made in its lifetime</span>`:''}
+      ${p.lifespan_absent?`<span class="warn">not found in ${p.lifespan_absent} source${p.lifespan_absent>1?'s':''} searched for its lifetime</span>`:''}
+      ${p.unchecked_mentions?`<span class="evidence-pending">${p.unchecked_mentions} unchecked search result${p.unchecked_mentions===1?'':'s'}</span>`:''}
       ${p.sources_disagree?'<span class="warn">sources disagree</span>':''}
       ${p.coord_status==='placeholder'?'<span class="warn">placeholder location</span>':''}
     </div>
-    <div class="pop-status"><span class="ev-k">at ${year}</span><span class="ev-v">${status}</span></div>
+    <div class="pop-status"><span class="ev-k">${allTime?'periods':'at '+year}</span><span class="ev-v">${status}</span></div>
     ${geom}${ribbon}${relHtml}${kidsHtml}
     <div class="pop-srcttl">Sources (${nSrc}${mentions}):</div>${srcs}${negs}</div>`;
 }
@@ -1080,7 +1111,7 @@ function digScore(d){
 }
 
 function escH(s){
-  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  return String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 }
 
 
@@ -1230,6 +1261,7 @@ function showArchive(i){
       ${a.formats?`<div class="ev"><span class="ev-k">formats</span><span class="ev-v">${escH(a.formats)}</span></div>`:''}
       <div class="pop-srcttl">Holdings:</div>
       <ul class="arch-hold">${holdings}</ul>
+      ${a.notes?`<details class="source-evidence"><summary>Search scope and notes</summary><p class="evidence-note">${escH(a.notes)}</p></details>`:''}
       ${srcBlock}
     </div>`;
   }
@@ -1298,6 +1330,7 @@ function enterEye(sid){
     const m = markers[f.properties.id];
     m.setStyle({opacity:0,fillOpacity:0});
     setFill(m,'none',0);
+    setClickable(m,false);
   });
   relLayer.remove();
 
@@ -1584,7 +1617,7 @@ document.querySelectorAll('.why').forEach(el=>{
   el.dataset.why = el.getAttribute('title') || '';
   el.removeAttribute('title');
   el.setAttribute('role','button');
-  el.setAttribute('aria-label','why this design choice');
+  el.setAttribute('aria-label','help');
   el.tabIndex = 0;
   function open(ev){
     ev.preventDefault();

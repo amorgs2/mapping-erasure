@@ -32,7 +32,7 @@ What the website loads, generated from the workbook by `export.py`:
 
 ```
 data/places.geojson                the places, with coordinates and lifespans
-data/records.json                  the attestations — every reading of every source
+data/records.json                  every included place, with its individual attestations
 data/sources.json                  the sources those readings come from
 data/archives.json                 the institutions and collections holding those sources
 data/relations.json                the dated relations between places
@@ -48,7 +48,7 @@ data/footprints.geojson            building outlines traced by hand from georefe
 
 ## Why both the workbook and the generated files are here
 
-A web browser cannot read a spreadsheet. The map reads the seven files in `data/`, so
+The map loads the seven files in `data/` rather than reading the workbook directly, so
 those have to be committed for the site to work at all. The workbook and `export.py` are
 committed so the data is inspectable and the map is reproducible, rather than a set of
 JSON files with no stated origin.
@@ -67,9 +67,14 @@ Then, from the repository root:
 python3 export.py
 ```
 
-One caution: if the workbook was last written by a script rather than saved from Excel,
-open it in Excel and save it before exporting. Scripted edits drop the cached results of
-the spreadsheet's own formulas, and exporting in that state produces empty columns.
+The Coordinates sheet uses formulas for place IDs and names. If an editor removes
+their saved formula results, recalculate and save the workbook in Excel before exporting.
+
+Attestations marked `Retracted` are excluded. Visibility counts distinct sources with
+positive attestations: 1–2 is Low, 3–8 is Medium, and 9 or more is High. Unchecked
+search leads remain labelled in the record cards and do not supply dated evidence for
+the time slider. Separate dated intervals are retained, so gaps between sources do not
+appear as continuous coverage. Hidden rows and reference sheets retain older records.
 
 ## Running the site locally
 

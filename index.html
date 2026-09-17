@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="style.css?v=53">
+<link rel="stylesheet" href="style.css?v=54">
 </head>
 <body>
 
@@ -31,12 +31,12 @@
         <option value="density">Archival density</option>
         <option value="displacement">Displacement</option>
       </select>
-      <span class="why" title="Each view uses colour to answer one categorical question. Certainty does not get its own view: it is shown in every view, through the geometry and opacity of the symbols (MacEachren 1992; Robinson 2019). Start is the opening state: choosing it returns the whole page to how it opened, with every located place shown, filters, search and toggles cleared, and the map and time back at the beginning.">?</span>
+      <span class="why" title="Choose what the colours show. Start resets the map, year, filters and search.">?</span>
     </span>
   </div>
   <div class="tray">
     <button id="allper" type="button" aria-pressed="true">Show all</button>
-    <span class="why" title="Puts every located place from every period on the map at once, in whichever view is chosen, ignoring the year on the slider. Filters, search and the camera stay where they are. Move the slider or press Play to read the same view year by year instead. To return the whole page to how it opened, choose the Start view.">?</span>
+    <span class="why" title="Show every period together. Filters and search still apply. Move the year slider to return to a dated view.">?</span>
   </div>
   <div class="tray">
     <span class="tray-label">time</span>
@@ -44,7 +44,7 @@
     <input type="range" id="yr" min="1850" max="2025" step="1" value="1900">
     <span class="group">
       <span id="yrout" class="chip yrchip">1900</span>
-      <span class="why" title="Solid means a dated source covers this year; faint means the place is claimed to exist in this year but no source is dated to it. The fading is taken directly from the data rather than from an arbitrary ± buffer (Plewe 2002).">?</span>
+      <span class="why" title="Solid symbols have dated evidence covering the selected year. Faint symbols fall within the recorded lifespan but lack checked, dated evidence for that year.">?</span>
     </span>
   </div>
 </div>
@@ -56,10 +56,10 @@
       <button type="button" class="scbtn on" data-scale="">Places</button>
       <button type="button" class="scbtn" data-scale="features">Buildings &amp; infrastructure</button>
     </span>
-    <span class="why" title="Sets what the map and both place panels list. 'Places' shows top-level places only: every town, plus the few standalone sites that belong to no town. 'Buildings &amp; infrastructure' shows everything recorded within a town: its buildings, camps, institutions, and the contents of the town plans. Each town's record card also links to its own features, so everything can be reached from either setting.">?</span>
+    <span class="why" title="Show towns and standalone sites, or the buildings and infrastructure recorded within them. Town cards link to their individual features.">?</span>
     <span class="group">
       <label class="chip"><input type="checkbox" id="ghosts" checked> ghosts</label>
-      <span class="why" title="Keeps a visible trace of removed places on the map instead of letting them simply disappear (Carse &amp; Keiner 2016; Robinson 2019).">?</span>
+      <span class="why" title="Keep a trace of places after their recorded removal date.">?</span>
     </span>
   </div>
 </div>
@@ -68,18 +68,18 @@
   <div class="tray">
     <span class="tray-label">filter by</span>
     <span class="frow" id="viewfilters">
-    <span class="group" data-view="density"><label class="chip" for="fDens">density:</label><select id="fDens"><option value="">all</option></select><span class="why" title="Keeps only the places with a given weight of surviving record: low is 1 to 2 distinct sources, medium 3 to 8, high 9 or more. It counts distinct sources rather than total mentions, so one prolific newspaper does not read as archival prominence (Carse &amp; Keiner 2016).">?</span></span>
-    <span class="group" data-view="density"><label class="chip" for="fAbs">absence:</label><select id="fAbs"><option value="">all</option></select><span class="why" title="Keeps only the places that a searched source made while the place still stood leaves out, or only those it never leaves out. Absence from a source made after a place was removed is not counted: that absence records the removal itself rather than a silence (Trouillot 1995).">?</span></span>
-    <span class="group" data-view="displacement"><label class="chip" for="fEras">removal:</label><select id="fEras"><option value="">all</option></select><span class="why" title="Keeps only the places that ceased in one way: flooded by the lake, depopulated by policy without flooding, relocated, still standing, or unrecorded. Flooding and expulsion are distinct histories and are not merged (Lasso 2016).">?</span></span>
+    <span class="group" data-view="density"><label class="chip" for="fDens">density:</label><select id="fDens"><option value="">all</option></select><span class="why" title="Count distinct sources: low = 1–2, medium = 3–8, high = 9 or more. Repeated mentions in one source count once. Unchecked leads are labelled in record cards.">?</span></span>
+    <span class="group" data-view="density"><label class="chip" for="fAbs">absence:</label><select id="fAbs"><option value="">all</option></select><span class="why" title="Filter by searches without a result during the recorded lifespan. These describe the sources searched, not proof that a place did not exist.">?</span></span>
+    <span class="group" data-view="displacement"><label class="chip" for="fEras">removal:</label><select id="fEras"><option value="">all</option></select><span class="why" title="Filter by the recorded removal type: flooding, depopulation, relocation, extant or unknown.">?</span></span>
     </span>
     <span class="frow frow-toggles">
     <span class="group">
       <label class="chip"><input type="checkbox" id="fDisagree"> sources disagree</label>
-      <span class="why" title="When two sources place the same site differently, both claims are plotted and neither is treated as the correct one (Fisher 1999; Knigge &amp; Cope 2006).">?</span>
+      <span class="why" title="Show locations marked as disputed or where placements from different sources exceed their combined stated uncertainty.">?</span>
     </span>
     <span class="group">
       <label class="chip"><input type="checkbox" id="usb"> american origin</label>
-      <span class="why" title="Fills the places of American origin (the townsites built by the Isthmian Canal Commission, the United States agency that built the canal, for its racially segregated workforce: the Gold Roll of mostly white United States employees and the Silver Roll of mostly West Indian Black workers) in solid red, in every view. Panamanian villages keep the view's own colour, and places recorded as 'Mixed' are not claimed either way. US-built places that still stand today get a red outline only, keeping their present-day fill.">?</span>
+      <span class="why" title="Highlight places recorded as American in origin. Mixed origins keep their usual colour. Extant American places receive a red outline.">?</span>
     </span>
     </span>
   </div>
@@ -98,7 +98,7 @@
 
   <div class="sidecol">
   <div class="panel" id="legpanel">
-    <div class="pt">Legend: <span class="why" title="Areas are only drawn where the dataset states a radius, or where a polygon was traced from a source; fixed-size symbols do not claim any distance in metres (Gregory &amp; Healey 2007; Montello et al. 2003).">?</span></div>
+    <div class="pt">Legend: <span class="why" title="Areas use recorded radii or traced boundaries. Fixed-size symbols do not represent an extent on the ground.">?</span></div>
     <div class="leg-sec">Colour — this view:</div>
     <div id="legend"></div>
     <div class="leg-sec">Geometry — every view:</div>
@@ -120,12 +120,12 @@
 
 <div class="panels">
   <div class="panel">
-    <div class="pt">Sources: <span class="why" title="Clicking a source redraws the map with only the places that source records, since each archive has its own geography (Knigge &amp; Cope 2006).">?</span> <span id="srcsort" role="group" aria-label="list order"><button type="button" class="sortbtn on" data-mode="date">by date</button><button type="button" class="sortbtn" data-mode="alpha">A–Z</button></span></div>
+    <div class="pt">Sources: <span class="why" title="Select a source to see the places it records.">?</span> <span id="srcsort" role="group" aria-label="list order"><button type="button" class="sortbtn on" data-mode="date">by date</button><button type="button" class="sortbtn" data-mode="alpha">A–Z</button></span></div>
     <div class="ps" id="srcsub">select a source to see only the places it records, ordered from earliest to latest</div>
     <div id="srclist"></div>
   </div>
   <div class="panel">
-    <div class="pt"><span id="unlttl">Unlocated places:</span> <span class="why" title="Documented in the sources but never assigned coordinates, so kept here rather than given invented points on the map (Hartman 2008). Each shows the archives that name it and those searched without result. A relation to a located place draws a dashed halo there.">?</span></div>
+    <div class="pt"><span id="unlttl">Unlocated places:</span> <span class="why" title="Places without coordinates remain listed here. Their cards show positive records, searches without results and any recorded relationships.">?</span></div>
     <div class="ps">documented in the sources but not placed — each shown with the archives that name it and those searched without result</div>
     <div id="unloc"></div>
   </div>
@@ -137,9 +137,9 @@
 </div>
 
 <section id="archives" class="panel arch-panel">
-  <div class="pt">The archives behind the sources: <span class="why" title="Archives are not neutral containers: which records were digitized, and which remain on paper an ocean away, reflects the power that produced them (Trouillot 1995). Every archive searched for this study is listed, including those that can only be consulted in their own reading rooms, because a 'searched, absent' claim is only as strong as the archives it was possible to search. Archives are listed at three levels: the institution, the collections it holds, and the sources drawn from each collection. Each collection and each source carries its own origin tag, so a French map held in a United States library is still tagged French.">?</span></div>
+  <div class="pt">The archives behind the sources: <span class="why" title="Browse institutions, collections and sources. Search notes distinguish catalogue checks, consulted material and gaps in access. Origin tags describe the records, not the location of the archive.">?</span></div>
   <div class="ps">every institution whose collections were searched for this study, ordered alphabetically; select one to view its collections and the sources drawn from each</div>
-  <div class="arch-note"><b>As of September 2026:</b> every collection in this study that can be searched in full from a distance is held in the United States or in France, the two countries that dug the canal. Even the Panamanian and Caribbean newspapers here can be read only through the Library of Congress and the University of Florida. The Museo del Canal in Panama City serves catalog metadata only, and the registers of the West Indian workers known as the Silver Men have not been digitized anywhere. That asymmetry is itself part of the record of erasure.</div>
+  <div class="arch-note">This dataset reflects the collections and material consulted for this study. Access varies: some entries record searches of digitized items, while others describe catalogue checks or material requiring a visit. The notes under each collection give the recorded scope and limits of those searches.</div>
   <div id="archlist"></div>
 </section>
 
@@ -159,7 +159,7 @@
       <div class="g-step"><i class="gn">7</i><svg class="g-ic" viewBox="0 0 16 16"><rect x="1.5" y="6.2" width="7.5" height="3.6" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="7" y="6.2" width="7.5" height="3.6" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.3"/></svg><div><b>sources disagree</b> keeps only contested locations. <b>american origin</b> fills the townsites the United States canal authority built for its Gold Roll (mostly white American) and Silver Roll (mostly West Indian Black) workers.</div></div>
       <div class="g-step"><i class="gn">8</i><svg class="g-ic" viewBox="0 0 16 16"><path d="M2 8 C5 3.6 11 3.6 14 8 C11 12.4 5 12.4 2 8 Z" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="8" cy="8" r="1.9" fill="currentColor"/></svg><div>In the <b>Sources</b> panel, click a source to redraw the map with only the places it records. Sources and Located places can be sorted by date or A&ndash;Z.</div></div>
       <div class="g-step"><i class="gn">9</i><svg class="g-ic" viewBox="0 0 16 16"><circle cx="4.5" cy="8" r="2.6" fill="currentColor"/><circle cx="11.5" cy="8" r="2.6" fill="none" stroke="currentColor" stroke-width="1.3"/></svg><div>The <b>dot</b> beside each name carries the colour the map is giving that place right now; unlocated places keep a neutral grey ring. From 2000 a closing tally joins the caption.</div></div>
-      <div class="g-step"><i class="gn">10</i><svg class="g-ic" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.3"/><line x1="8" y1="7.2" x2="8" y2="11.6" stroke="currentColor" stroke-width="1.3"/><circle cx="8" cy="4.7" r="0.95" fill="currentColor"/></svg><div>Each <b>?</b> explains the reasoning behind a design choice. The page address records the current display, so it can be copied to cite one particular view.</div></div>
+      <div class="g-step"><i class="gn">10</i><svg class="g-ic" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.3"/><line x1="8" y1="7.2" x2="8" y2="11.6" stroke="currentColor" stroke-width="1.3"/><circle cx="8" cy="4.7" r="0.95" fill="currentColor"/></svg><div>Each <b>?</b> explains a control. The page address saves the view, year and filters; it does not save the search text or map position.</div></div>
       </div>
     </div>
 
@@ -269,7 +269,7 @@
             <div class="ev"><span class="ev-k">Building</span><span class="ev-v">a hospital, a camp, a roundhouse&hellip; <span class="evo">each linked to its own record</span></span></div>
             <div class="pop-srcttl"><i class="gn">9</i>Sources (n, across m mentions):</div>
             <div class="ev"><span class="ev-k">&times;4</span><span class="ev-v">Source title <span class="evo">(origin; kind of record; ×4 = mentions it 4 times)</span></span></div>
-            <div class="pop-srcttl"><i class="gn">10</i>Left out by sources made in its lifetime (n):</div>
+            <div class="pop-srcttl"><i class="gn">10</i>Not found in searches overlapping its lifespan (n):</div>
             <div class="ev"><span class="ev-k">&times;1</span><span class="ev-v">A source made while the place stood that does not name it <span class="evo">(origin)</span></span></div>
             <div class="pop-srcttl">Also searched, absent (n):</div>
             <div class="evo">made before it existed, after it was removed, or undated</div>
@@ -284,8 +284,8 @@
           <div><i class="gn">6</i>Each distinct name the sources use, earliest first, since renaming is part of these places' history.</div>
           <div><i class="gn">7</i>Dated links to other places in this study.</div>
           <div><i class="gn">8</i>The buildings, camps and institutions recorded inside a town, each linking to its own record; a feature's card links back to its town.</div>
-          <div><i class="gn">9</i>One line per source that mentions it; the heading gives the number of sources and the total mentions across them.</div>
-          <div><i class="gn">10</i>Sources that were searched for this place and do not mention it. The two headings keep them apart: a source made <i>while the place stood</i> is a silence in the record, while one made before it was founded or after it was removed is not. That absence is recorded on purpose, not left as a gap.</div>
+          <div><i class="gn">9</i>One expandable entry per source. Open it to see individual references, dates, confidence and research notes. Unchecked search results are labelled.</div>
+          <div><i class="gn">10</i>Searches without a result are grouped by whether their dates overlap the recorded lifespan. Their meaning depends on what was searched and how thoroughly; an unsuccessful search does not establish that a place was absent.</div>
         </div>
       </div>
     </div>
@@ -297,6 +297,6 @@
 <button id="guidebtn" type="button" aria-label="jump to the how-to-read guide">how to read this map ↓</button>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="app.js?v=87"></script>
+<script src="app.js?v=88"></script>
 </body>
 </html>
