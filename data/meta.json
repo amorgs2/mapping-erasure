@@ -1,9 +1,9 @@
 {
- "generated": "2026-09-17",
- "n_places": 201,
+ "generated": "2026-09-20",
+ "n_places": 200,
  "n_located": 184,
- "n_attestations": 2930,
- "n_workbook_attestations": 3028,
+ "n_attestations": 2929,
+ "n_workbook_attestations": 3027,
  "n_sources": 57,
  "n_relations": 17,
  "n_archives": 19
